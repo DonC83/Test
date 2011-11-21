@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class RabbitMQSend {
 
-    private final static String QUEUE_NAME = "test";
+    private final static String QUEUE_NAME = "jem";
 
     public static void main(String[] args) throws IOException {
         ConnectionFactory factory = new ConnectionFactory();

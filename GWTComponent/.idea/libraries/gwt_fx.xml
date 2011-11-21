@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gwt-fx">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/libraries/gwt-FXv0.5.0MS1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
