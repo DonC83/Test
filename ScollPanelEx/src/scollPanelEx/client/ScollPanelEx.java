@@ -2,6 +2,7 @@ package scollPanelEx.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.user.cellview.client.CellTable;
@@ -113,14 +114,16 @@ public class ScollPanelEx implements EntryPoint {
         CellTable.Resources resources = GWT.create(TableResources.class);
         CellTable<Patterns> table = new CellTable<Patterns>(data.size(), resources);
 
+        table.setWidth("705px", true);
+
         TextColumn<Patterns> alertColumn = new TextColumn<Patterns>() {
             @Override
             public String getValue(Patterns object) {
                 return object.getAlert();
             }
         };
-        table.addColumn(alertColumn, "");
-        table.setColumnWidth(alertColumn, "20px");
+        table.addColumn(alertColumn, ".");
+        table.setColumnWidth(alertColumn, 20, Style.Unit.PX);
 
         TextColumn<Patterns> exchangeColumn = new TextColumn<Patterns>() {
             @Override
@@ -128,11 +131,11 @@ public class ScollPanelEx implements EntryPoint {
                 return object.getExchange();
             }
         };
-        exchangeColumn.setSortable(true);
+//        exchangeColumn.setSortable(true);
 
         table.addColumn(exchangeColumn, "Exchange");
-        table.setColumnWidth(exchangeColumn, "70px");
-        table.addColumnStyleName(1, "grid-headercell");
+        table.setColumnWidth(exchangeColumn, 100, Style.Unit.PX);
+//        table.addColumnStyleName(1, "grid-headercell");
 
 
         TextColumn<Patterns> symbolColumn = new TextColumn<Patterns>() {
@@ -142,7 +145,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(symbolColumn, "Symbol");
-        table.setColumnWidth(exchangeColumn, "130px");
+        table.setColumnWidth(exchangeColumn, 130, Style.Unit.PX);
 
         TextColumn<Patterns> directionColumn = new TextColumn<Patterns>() {
             @Override
@@ -150,8 +153,8 @@ public class ScollPanelEx implements EntryPoint {
                 return object.getDirection();
             }
         };
-        table.addColumn(directionColumn, "");
-        table.setColumnWidth(exchangeColumn, "20px");
+        table.addColumn(directionColumn, ".");
+        table.setColumnWidth(exchangeColumn, 20, Style.Unit.PX);
 
 
         TextColumn<Patterns> intervalColumn = new TextColumn<Patterns>() {
@@ -161,7 +164,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(intervalColumn, "Interval");
-        table.setColumnWidth(intervalColumn, "70px");
+        table.setColumnWidth(intervalColumn, 70, Style.Unit.PX);
 
         TextColumn<Patterns> patternColumn = new TextColumn<Patterns>() {
             @Override
@@ -170,7 +173,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(patternColumn, "Pattern");
-        table.setColumnWidth(patternColumn, "140px");
+        table.setColumnWidth(patternColumn, 140, Style.Unit.PX);
 
         TextColumn<Patterns> identifiedColumn = new TextColumn<Patterns>() {
             @Override
@@ -179,7 +182,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(identifiedColumn, "Identified");
-        table.setColumnWidth(patternColumn, "50px");
+        table.setColumnWidth(patternColumn, 50, Style.Unit.PX);
 
 
         TextColumn<Patterns> lengthCol = new TextColumn<Patterns>() {
@@ -189,7 +192,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(lengthCol, "Length");
-        table.setColumnWidth(patternColumn, "50px");
+        table.setColumnWidth(patternColumn, 50, Style.Unit.PX);
 
 
 
@@ -200,7 +203,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(qualityCol, "Quality");
-        table.setColumnWidth(patternColumn, "50px");
+        table.setColumnWidth(patternColumn, 50, Style.Unit.PX);
 
 
         TextColumn<Patterns> typeCol = new TextColumn<Patterns>() {
@@ -210,7 +213,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(typeCol, "Type");
-        table.setColumnWidth(patternColumn, "52px");
+        table.setColumnWidth(patternColumn, 75, Style.Unit.PX);
 
         table.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.DISABLED);
 
@@ -224,34 +227,11 @@ public class ScollPanelEx implements EntryPoint {
         });
 
 
-        table.setWidth("100%", false);
+
         table.setRowData(data);
         if (data.size()>0)
             selectionModel.setSelected(data.get(0), true);
         return table;
     }
 
-
-
-
-
-
-
-
-
-    private static class MyAsyncCallback implements AsyncCallback<String> {
-        private Label label;
-
-        public MyAsyncCallback(Label label) {
-            this.label = label;
-        }
-
-        public void onSuccess(String result) {
-            label.getElement().setInnerHTML(result);
-        }
-
-        public void onFailure(Throwable throwable) {
-            label.setText("Failed to receive answer from server!");
-        }
-    }
 }

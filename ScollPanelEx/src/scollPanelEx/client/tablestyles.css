@@ -10,11 +10,11 @@
 }
 
 .cellTableFooter {
-    border-top: 1px solid #6f7277;
-    padding: 1px 1px;
-    text-align: left;
-    color: #000000;
-    overflow: hidden;
+    /*border-top: 1px solid #6f7277;*/
+    /*padding: 1px 1px;*/
+    /*text-align: left;*/
+    /*color: #000000;*/
+    /*overflow: hidden;*/
 }
 
 .cellTableHeader {
@@ -45,7 +45,7 @@
     overflow: hidden;
     cursor: pointer;
     cursor: hand;
-    border: 2px solid #000000;
+    /*border: 2px solid #000000;*/
 }
 
 .cellTableFirstColumnFooter {
@@ -70,7 +70,7 @@
 }
 
 .cellTableSortableHeader:hover {
-    color: #6c6b6b;
+    /*color: #6c6b6b;*/
 }
 
 .cellTableSortedHeaderAscending {
@@ -86,7 +86,9 @@
 }
 
 .cellTableEvenRowCell {
-    border: selectionBorderWidth solid #cccccc;
+    border-left: selectionBorderWidth solid #cccccc;
+    border-bottom: selectionBorderWidth solid #cccccc;
+
 }
 
 .cellTableOddRow {
@@ -96,7 +98,9 @@
 
 .cellTableOddRowCell {
     /*border: selectionBorderWidth solid #f3f7fb;*/
-    border: selectionBorderWidth solid #cccccc;
+    border-left: selectionBorderWidth solid #cccccc;
+    border-bottom: selectionBorderWidth solid #cccccc;
+
 }
 
 .cellTableHoveredRow {
@@ -104,7 +108,9 @@
 }
 
 .cellTableHoveredRowCell {
-    border: selectionBorderWidth solid #cccccc;
+    border-left: selectionBorderWidth solid #cccccc;
+    border-bottom: selectionBorderWidth solid #cccccc;
+
 }
 
 .cellTableKeyboardSelectedRow {
@@ -112,7 +118,9 @@
 }
 
 .cellTableKeyboardSelectedRowCell {
-    border: selectionBorderWidth solid #cccccc;
+    border-left: selectionBorderWidth solid #cccccc;
+    border-bottom: selectionBorderWidth solid #cccccc;
+
 }
 
 .cellTableSelectedRow {
@@ -123,16 +131,27 @@
 }
 
 .cellTableSelectedRowCell {
-    border: selectionBorderWidth solid #cccccc;
+    border-left: selectionBorderWidth solid #cccccc;
+    border-bottom: selectionBorderWidth solid #cccccc;
+
 }
 
 /**
  * The keyboard selected cell is visible over selection.
  */
 .cellTableKeyboardSelectedCell {
-    border: selectionBorderWidth solid #cccccc;
+    border-left: selectionBorderWidth solid #cccccc;
+    border-bottom: selectionBorderWidth solid #cccccc;
 }
 
 .cellTableLoading {
     margin: 30px;
+}
+
+/*.gald-wold {*/
+    /*border: none;*/
+/*}*/
+
+/*.gald-wojd {*/
+    /*border: none;*/
 }
