@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="JIRA" product="Oracle" version="Oracle Database 11g Release 11.1.0.0.0 - Production" jdbc-version="10.2" driver-version="10.2.0.5.0" uuid="c1c631a9-8d71-466d-8f56-92d9445679e0">
+    <extra-name-characters>$#</extra-name-characters>
+    <identifier-quote-string>"</identifier-quote-string>
+    <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+    <jdbc-url>jdbc:oracle:thin:@10.17.1.12:1521:voxprod</jdbc-url>
+    <user-name>jira4</user-name>
+    <user-password>dfdfdffadff8dfcedf99dfce</user-password>
+    <schema-pattern>*.JIRA4</schema-pattern>
+    <default-schemas>*.JIRA4</default-schemas>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/libraries/ojdbc14.jar</url>
+      </library>
+    </libraries>
+    <table name="AVATAR" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="FILENAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CONTENTTYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="AVATARTYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="OWNER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SYSTEMAVATAR" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_AVATAR" columns="id" />
+      <index name="AVATAR_INDEX" unique="false" columns="AVATARTYPE,OWNER" />
+    </table>
+    <table name="CHANGEGROUP" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUEID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="AUTHOR" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <primary-key name="PK_CHANGEGROUP" columns="id" />
+      <index name="CHGGROUP_ISSUE" unique="false" columns="ISSUEID" />
+    </table>
+    <table name="CHANGEITEM" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="GROUPID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDTYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="OLDVALUE" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="OLDSTRING" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="NEWVALUE" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="NEWSTRING" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <primary-key name="PK_CHANGEITEM" columns="id" />
+      <index name="CHGITEM_CHGGRP" unique="false" columns="GROUPID" />
+      <index name="CHGITEM_FIELD" unique="false" columns="FIELD" />
+    </table>
+    <table name="COLUMNLAYOUT" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SEARCHREQUEST" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_COLUMNLAYOUT" columns="id" />
+    </table>
+    <table name="COLUMNLAYOUTITEM" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="COLUMNLAYOUT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDIDENTIFIER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="HORIZONTALPOSITION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_COLUMNLAYOUTITEM" columns="id" />
+    </table>
+    <table name="COMPONENT" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROJECT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="URL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LEAD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ASSIGNEETYPE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_COMPONENT" columns="id" />
+    </table>
+    <table name="CONFIGURATIONCONTEXT" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROJECTCATEGORY" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PROJECT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CUSTOMFIELD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELDCONFIGSCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_CONFIGURATIONCONTEXT" columns="id" />
+      <index name="CONFCONTEXT" unique="false" columns="PROJECTCATEGORY,PROJECT,CUSTOMFIELD" />
+    </table>
+    <table name="CUSTOMFIELD" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CUSTOMFIELDTYPEKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CUSTOMFIELDSEARCHERKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CFNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="DEFAULTVALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELDTYPE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PROJECT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CUSTOMFIELD" columns="id" />
+    </table>
+    <table name="CUSTOMFIELDOPTION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CUSTOMFIELD" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CUSTOMFIELDCONFIG" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PARENTOPTIONID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CUSTOMVALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="OPTIONTYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CUSTOMFIELDOPTION" columns="id" />
+      <index name="CF_CFOPTION" unique="false" columns="CUSTOMFIELD" />
+    </table>
+    <table name="CUSTOMFIELDVALUE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CUSTOMFIELD" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PARENTKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="STRINGVALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="NUMBERVALUE" sqlType="NUMBER" length="18" precision="6" nullable="true" jdbcType="3" />
+      <column name="TEXTVALUE" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="DATEVALUE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="VALUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CUSTOMFIELDVALUE" columns="id" />
+      <index name="CFVALUE_ISSUE" unique="false" columns="ISSUE,CUSTOMFIELD" />
+    </table>
+    <table name="CWD_APPLICATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="APPLICATION_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_APPLICATION_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="ACTIVE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="APPLICATION_TYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREDENTIAL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CWD_APPLICATION" columns="id" />
+      <index name="UK_APPLICATION_NAME" unique="true" columns="LOWER_APPLICATION_NAME" />
+    </table>
+    <table name="CWD_APPLICATION_ADDRESS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="APPLICATION_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="REMOTE_ADDRESS" sqlType="VARCHAR2" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="ENCODED_ADDRESS_BINARY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="REMOTE_ADDRESS_MASK" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_CWD_APPLICATION_ADDRESS" columns="application_id,remote_address" />
+    </table>
+    <table name="CWD_DIRECTORY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="DIRECTORY_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_DIRECTORY_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="ACTIVE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="IMPL_CLASS" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_IMPL_CLASS" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DIRECTORY_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="DIRECTORY_POSITION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_CWD_DIRECTORY" columns="id" />
+      <index name="IDX_DIRECTORY_ACTIVE" unique="false" columns="ACTIVE" />
+      <index name="IDX_DIRECTORY_IMPL" unique="false" columns="LOWER_IMPL_CLASS" />
+      <index name="IDX_DIRECTORY_TYPE" unique="false" columns="DIRECTORY_TYPE" />
+      <index name="UK_DIRECTORY_NAME" unique="false" columns="LOWER_DIRECTORY_NAME" />
+    </table>
+    <table name="CWD_DIRECTORY_ATTRIBUTE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="DIRECTORY_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ATTRIBUTE_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="ATTRIBUTE_VALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CWD_DIRECTORY_ATTRIBUTE" columns="directory_id,attribute_name" />
+    </table>
+    <table name="CWD_DIRECTORY_OPERATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="DIRECTORY_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="OPERATION_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <primary-key name="PK_CWD_DIRECTORY_OPERATION" columns="directory_id,operation_type" />
+    </table>
+    <table name="CWD_GROUP" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="GROUP_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_GROUP_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ACTIVE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="LOCAL" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="CREATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="GROUP_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="DIRECTORY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_CWD_GROUP" columns="id" />
+      <index name="UK_GROUP_NAME_DIR_ID" unique="true" columns="LOWER_GROUP_NAME,DIRECTORY_ID" />
+      <index name="IDX_GROUP_ACTIVE" unique="false" columns="LOWER_GROUP_NAME,ACTIVE" />
+      <index name="IDX_GROUP_DIR_ID" unique="false" columns="DIRECTORY_ID" />
+    </table>
+    <table name="CWD_GROUP_ATTRIBUTES" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="GROUP_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="DIRECTORY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ATTRIBUTE_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ATTRIBUTE_VALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_ATTRIBUTE_VALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CWD_GROUP_ATTRIBUTES" columns="id" />
+      <index name="UK_GROUP_ATTR_NAME_LVAL" unique="true" columns="GROUP_ID,ATTRIBUTE_NAME,LOWER_ATTRIBUTE_VALUE" />
+      <index name="IDX_GOUP_ATTR_DIR_NAME_LVAL" unique="false" columns="DIRECTORY_ID,ATTRIBUTE_NAME,LOWER_ATTRIBUTE_VALUE" />
+    </table>
+    <table name="CWD_MEMBERSHIP" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PARENT_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CHILD_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="MEMBERSHIP_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="GROUP_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="PARENT_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_PARENT_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CHILD_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_CHILD_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DIRECTORY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_CWD_MEMBERSHIP" columns="id" />
+      <index name="UK_MEM_PARENT_CHILD_TYPE" unique="true" columns="PARENT_ID,CHILD_ID,MEMBERSHIP_TYPE" />
+      <index name="IDX_MEM_DIR_CHILD" unique="false" columns="LOWER_CHILD_NAME,MEMBERSHIP_TYPE,DIRECTORY_ID" />
+      <index name="IDX_MEM_DIR_PARENT" unique="false" columns="LOWER_PARENT_NAME,MEMBERSHIP_TYPE,DIRECTORY_ID" />
+      <index name="IDX_MEM_DIR_PARENT_CHILD" unique="false" columns="LOWER_PARENT_NAME,LOWER_CHILD_NAME,MEMBERSHIP_TYPE,DIRECTORY_ID" />
+    </table>
+    <table name="CWD_USER" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="DIRECTORY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="USER_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_USER_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ACTIVE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="CREATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATED_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="FIRST_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_FIRST_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LAST_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_LAST_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DISPLAY_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_DISPLAY_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="EMAIL_ADDRESS" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_EMAIL_ADDRESS" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREDENTIAL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CWD_USER" columns="id" />
+      <index name="UK_USER_NAME_DIR_ID" unique="true" columns="LOWER_USER_NAME,DIRECTORY_ID" />
+      <index name="IDX_DISPLAY_NAME" unique="false" columns="LOWER_DISPLAY_NAME" />
+      <index name="IDX_EMAIL_ADDRESS" unique="false" columns="LOWER_EMAIL_ADDRESS" />
+      <index name="IDX_FIRST_NAME" unique="false" columns="LOWER_FIRST_NAME" />
+      <index name="IDX_LAST_NAME" unique="false" columns="LOWER_LAST_NAME" />
+    </table>
+    <table name="CWD_USER_ATTRIBUTES" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="USER_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="DIRECTORY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ATTRIBUTE_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ATTRIBUTE_VALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LOWER_ATTRIBUTE_VALUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_CWD_USER_ATTRIBUTES" columns="id" />
+      <index name="IDX_USER_ATTR_DIR_NAME_LVAL" unique="false" columns="DIRECTORY_ID,ATTRIBUTE_NAME,LOWER_ATTRIBUTE_VALUE" />
+      <index name="UK_USER_ATTR_NAME_LVAL" unique="false" columns="USER_ID,ATTRIBUTE_NAME" />
+    </table>
+    <table name="EXTERNALGADGET" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="GADGET_XML" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_EXTERNALGADGET" columns="id" />
+    </table>
+    <table name="EXTERNAL_ENTITIES" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ENTITYTYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_EXTERNAL_ENTITIES" columns="id" />
+      <index name="EXT_ENTITY_NAME" unique="false" columns="NAME" />
+    </table>
+    <table name="FAVOURITEASSOCIATIONS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ENTITYTYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="ENTITYID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FAVOURITEASSOCIATIONS" columns="id" />
+      <index name="FAVOURITE_INDEX" unique="true" columns="USERNAME,ENTITYTYPE,ENTITYID" />
+    </table>
+    <table name="FIELDCONFIGSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CONFIGNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELDID" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="CUSTOMFIELD" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDCONFIGSCHEME" columns="id" />
+      <index name="FCS_FIELDID" unique="false" columns="FIELDID" />
+    </table>
+    <table name="FIELDCONFIGSCHEMEISSUETYPE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELDCONFIGSCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDCONFIGURATION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDCONFIGSCHEMEISSUETYPE" columns="id" />
+      <index name="FCS_ISSUETYPE" unique="false" columns="ISSUETYPE" />
+      <index name="FCS_SCHEME" unique="false" columns="FIELDCONFIGSCHEME" />
+    </table>
+    <table name="FIELDCONFIGURATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CONFIGNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELDID" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="CUSTOMFIELD" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDCONFIGURATION" columns="id" />
+      <index name="FC_FIELDID" unique="false" columns="FIELDID" />
+    </table>
+    <table name="FIELDLAYOUT" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LAYOUT_TYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LAYOUTSCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDLAYOUT" columns="id" />
+    </table>
+    <table name="FIELDLAYOUTITEM" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="FIELDLAYOUT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDIDENTIFIER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="VERTICALPOSITION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ISHIDDEN" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="ISREQUIRED" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="RENDERERTYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_FIELDLAYOUTITEM" columns="id" />
+    </table>
+    <table name="FIELDLAYOUTSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_FIELDLAYOUTSCHEME" columns="id" />
+    </table>
+    <table name="FIELDLAYOUTSCHEMEASSOCIATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PROJECT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDLAYOUTSCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDLAYOUTSCHEMEASSOCIATIO" columns="id" />
+      <index name="FL_SCHEME_ASSOC" unique="false" columns="PROJECT,ISSUETYPE" />
+    </table>
+    <table name="FIELDLAYOUTSCHEMEENTITY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELDLAYOUT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDLAYOUTSCHEMEENTITY" columns="id" />
+      <index name="FIELDLAYOUT_LAYOUT" unique="false" columns="FIELDLAYOUT" />
+      <index name="FIELDLAYOUT_SCHEME" unique="false" columns="SCHEME" />
+    </table>
+    <table name="FIELDSCREEN" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_FIELDSCREEN" columns="id" />
+    </table>
+    <table name="FIELDSCREENLAYOUTITEM" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="FIELDIDENTIFIER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDSCREENTAB" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDSCREENLAYOUTITEM" columns="id" />
+      <index name="FIELDSCITEM_TAB" unique="false" columns="FIELDSCREENTAB" />
+      <index name="FIELDSCREEN_FIELD" unique="false" columns="FIELDIDENTIFIER" />
+    </table>
+    <table name="FIELDSCREENSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_FIELDSCREENSCHEME" columns="id" />
+    </table>
+    <table name="FIELDSCREENSCHEMEITEM" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="OPERATION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDSCREEN" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDSCREENSCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDSCREENSCHEMEITEM" columns="id" />
+      <index name="SCREENITEM_SCHEME" unique="false" columns="FIELDSCREENSCHEME" />
+    </table>
+    <table name="FIELDSCREENTAB" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDSCREEN" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_FIELDSCREENTAB" columns="id" />
+      <index name="FIELDSCREEN_TAB" unique="false" columns="FIELDSCREEN" />
+    </table>
+    <table name="FILEATTACHMENT" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUEID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="MIMETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="FILENAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="FILESIZE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="AUTHOR" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_FILEATTACHMENT" columns="id" />
+      <index name="ATTACH_ISSUE" unique="false" columns="ISSUEID" />
+    </table>
+    <table name="FILTERSUBSCRIPTION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="FILTER_I_D" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="GROUPNAME" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="LAST_RUN" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="EMAIL_ON_EMPTY" sqlType="VARCHAR2" length="10" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_FILTERSUBSCRIPTION" columns="id" />
+      <index name="SUBSCRPTN_GROUP" unique="false" columns="FILTER_I_D,GROUPNAME" />
+      <index name="SUBSCRPT_USER" unique="false" columns="FILTER_I_D,USERNAME" />
+    </table>
+    <table name="GADGETUSERPREFERENCE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PORTLETCONFIGURATION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="USERPREFKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="USERPREFVALUE" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <primary-key name="PK_GADGETUSERPREFERENCE" columns="id" />
+      <index name="USERPREF_PORTLETCONFIGURATION" unique="false" columns="PORTLETCONFIGURATION" />
+    </table>
+    <table name="GENERICCONFIGURATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="DATATYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="DATAKEY" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="XMLVALUE" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_GENERICCONFIGURATION" columns="id" />
+      <index name="TYPE_KEY" unique="true" columns="DATATYPE,DATAKEY" />
+    </table>
+    <table name="GROUPBASE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="GROUPNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_GROUPBASE" columns="id" />
+      <index name="OSGROUP_NAME" unique="false" columns="GROUPNAME" />
+    </table>
+    <table name="ISSUELINK" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="LINKTYPE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SOURCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="DESTINATION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_ISSUELINK" columns="id" />
+      <index name="ISSUELINK_DEST" unique="false" columns="DESTINATION" />
+      <index name="ISSUELINK_SRC" unique="false" columns="SOURCE" />
+      <index name="ISSUELINK_TYPE" unique="false" columns="LINKTYPE" />
+    </table>
+    <table name="ISSUELINKTYPE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="LINKNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="INWARD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="OUTWARD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PSTYLE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_ISSUELINKTYPE" columns="id" />
+      <index name="LINKTYPENAME" unique="false" columns="LINKNAME" />
+      <index name="LINKTYPESTYLE" unique="false" columns="PSTYLE" />
+    </table>
+    <table name="ISSUESECURITYSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="DEFAULTLEVEL" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_ISSUESECURITYSCHEME" columns="id" />
+    </table>
+    <table name="ISSUESTATUS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PNAME" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="ICONURL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_ISSUESTATUS" columns="id" />
+    </table>
+    <table name="ISSUETYPE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PNAME" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="PSTYLE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="ICONURL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_ISSUETYPE" columns="id" />
+    </table>
+    <table name="ISSUETYPESCREENSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_ISSUETYPESCREENSCHEME" columns="id" />
+    </table>
+    <table name="ISSUETYPESCREENSCHEMEENTITY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIELDSCREENSCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_ISSUETYPESCREENSCHEMEENTITY" columns="id" />
+      <index name="FIELDSCREEN_SCHEME" unique="false" columns="FIELDSCREENSCHEME" />
+    </table>
+    <table name="JIRAACTION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUEID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="AUTHOR" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ACTIONTYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ACTIONLEVEL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ROLELEVEL" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ACTIONBODY" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATEAUTHOR" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="UPDATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="ACTIONNUM" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_JIRAACTION" columns="id" />
+      <index name="ACTION_ISSUE" unique="false" columns="ISSUEID,ACTIONTYPE" />
+    </table>
+    <table name="JIRADRAFTWORKFLOWS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PARENTNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTOR" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <primary-key name="PK_JIRADRAFTWORKFLOWS" columns="id" />
+    </table>
+    <table name="JIRAEVENTTYPE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="TEMPLATE_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="EVENT_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_JIRAEVENTTYPE" columns="id" />
+    </table>
+    <table name="JIRAISSUE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PROJECT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="REPORTER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ASSIGNEE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SUMMARY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="ENVIRONMENT" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="PRIORITY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="RESOLUTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ISSUESTATUS" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="DUEDATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="RESOLUTIONDATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="VOTES" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMEORIGINALESTIMATE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMEESTIMATE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMESPENT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="WORKFLOW_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SECURITY" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIXFOR" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="COMPONENT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_JIRAISSUE" columns="id" />
+      <index name="ISSUE_ASSIGNEE" unique="false" columns="ASSIGNEE" />
+      <index name="ISSUE_KEY" unique="false" columns="PKEY" />
+      <index name="ISSUE_PROJ_STATUS" unique="false" columns="PROJECT,ISSUESTATUS" />
+      <index name="ISSUE_WORKFLOW" unique="false" columns="WORKFLOW_ID" />
+    </table>
+    <table name="JIRAISSUE_COPY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PROJECT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="REPORTER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ASSIGNEE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SUMMARY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="ENVIRONMENT" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="PRIORITY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="RESOLUTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ISSUESTATUS" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED" sqlType="TIMESTAMP(6)" length="11" precision="6" nullable="true" jdbcType="93" />
+      <column name="UPDATED" sqlType="TIMESTAMP(6)" length="11" precision="6" nullable="true" jdbcType="93" />
+      <column name="DUEDATE" sqlType="TIMESTAMP(6)" length="11" precision="6" nullable="true" jdbcType="93" />
+      <column name="RESOLUTIONDATE" sqlType="TIMESTAMP(6)" length="11" precision="6" nullable="true" jdbcType="93" />
+      <column name="VOTES" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMEORIGINALESTIMATE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMEESTIMATE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMESPENT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="WORKFLOW_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SECURITY" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FIXFOR" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="COMPONENT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="SYS_C001941547" columns="id" />
+    </table>
+    <table name="JIRAPERMS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PERMTYPE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PROJECTID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="GROUPNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_JIRAPERMS" columns="id" />
+    </table>
+    <table name="JIRAWORKFLOWS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="WORKFLOWNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATORNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTOR" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="ISLOCKED" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_JIRAWORKFLOWS" columns="id" />
+    </table>
+    <table name="LABEL" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="FIELDID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ISSUE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="LABEL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_LABEL" columns="id" />
+      <index name="LABEL_FIELDISSUE" unique="false" columns="ISSUE,FIELDID" />
+      <index name="LABEL_FIELDISSUELABEL" unique="false" columns="ISSUE,FIELDID,LABEL" />
+      <index name="LABEL_ISSUE" unique="false" columns="ISSUE" />
+      <index name="LABEL_LABEL" unique="false" columns="LABEL" />
+    </table>
+    <table name="LISTENERCONFIG" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CLAZZ" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LISTENERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_LISTENERCONFIG" columns="id" />
+    </table>
+    <table name="MAILSERVER" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="MAILFROM" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PREFIX" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="SMTP_PORT" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="SERVER_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="SERVERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="JNDILOCATION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="MAILUSERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="MAILPASSWORD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PROTOCOL" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="ISTLSREQUIRED" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="TIMEOUT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_MAILSERVER" columns="id" />
+    </table>
+    <table name="MEMBERSHIPBASE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="USER_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="GROUP_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_MEMBERSHIPBASE" columns="id" />
+      <index name="MSHIPBASE_GROUP" unique="false" columns="GROUP_NAME" />
+      <index name="MSHIPBASE_USER" unique="false" columns="USER_NAME" />
+    </table>
+    <table name="NODEASSOCIATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="SOURCE_NODE_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SOURCE_NODE_ENTITY" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SINK_NODE_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SINK_NODE_ENTITY" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="ASSOCIATION_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_NODEASSOCIATION" columns="source_node_id,source_node_entity,sink_node_id,sink_node_entity,association_type" />
+      <index name="NODE_SINK" unique="false" columns="SINK_NODE_ID,SINK_NODE_ENTITY" />
+      <index name="NODE_SOURCE" unique="false" columns="SOURCE_NODE_ID,SOURCE_NODE_ENTITY" />
+    </table>
+    <table name="NOTIFICATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="EVENT" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="EVENT_TYPE_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TEMPLATE_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="NOTIF_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="NOTIF_PARAMETER" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_NOTIFICATION" columns="id" />
+      <index name="NTFCTN_SCHEME" unique="false" columns="SCHEME" />
+    </table>
+    <table name="NOTIFICATIONINSTANCE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NOTIFICATIONTYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="SOURCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="EMAILADDRESS" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="MESSAGEID" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_NOTIFICATIONINSTANCE" columns="id" />
+      <index name="NOTIF_SOURCE" unique="false" columns="SOURCE" />
+    </table>
+    <table name="NOTIFICATIONSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_NOTIFICATIONSCHEME" columns="id" />
+    </table>
+    <table name="OAUTHCONSUMER" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="CONSUMERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CONSUMER_KEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CONSUMERSERVICE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PUBLIC_KEY" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="PRIVATE_KEY" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="CALLBACK" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="SIGNATURE_METHOD" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHARED_SECRET" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_OAUTHCONSUMER" columns="id" />
+      <index name="OAUTH_CONSUMER_INDEX" unique="true" columns="CONSUMER_KEY" />
+      <index name="OAUTH_CONSUMER_SERVICE_INDEX" unique="true" columns="CONSUMERSERVICE" />
+    </table>
+    <table name="OAUTHCONSUMERTOKEN" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="TOKEN_KEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TOKEN" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TOKEN_SECRET" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TOKEN_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="CONSUMER_KEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_OAUTHCONSUMERTOKEN" columns="id" />
+      <index name="OAUTH_CONSUMER_TOKEN_KEY_INDEX" unique="true" columns="TOKEN_KEY" />
+      <index name="OAUTH_CONSUMER_TOKEN_INDEX" unique="false" columns="TOKEN" />
+    </table>
+    <table name="OAUTHSPCONSUMER" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="CONSUMER_KEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CONSUMERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PUBLIC_KEY" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="CALLBACK" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_OAUTHSPCONSUMER" columns="id" />
+      <index name="OAUTH_SP_CONSUMER_INDEX" unique="true" columns="CONSUMER_KEY" />
+    </table>
+    <table name="OAUTHSPTOKEN" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="TOKEN" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TOKEN_SECRET" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TOKEN_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="CONSUMER_KEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TTL" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SPAUTH" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="CALLBACK" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="SPVERIFIER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SPVERSION" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_OAUTHSPTOKEN" columns="id" />
+      <index name="OAUTH_SP_TOKEN_INDEX" unique="true" columns="TOKEN" />
+      <index name="OAUTH_SP_CONSUMER_KEY_INDEX" unique="false" columns="CONSUMER_KEY" />
+    </table>
+    <table name="OPTIONCONFIGURATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="FIELDID" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="OPTIONID" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIELDCONFIG" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_OPTIONCONFIGURATION" columns="id" />
+      <index name="FIELDID_FIELDCONF" unique="false" columns="FIELDID,FIELDCONFIG" />
+      <index name="FIELDID_OPTIONID" unique="false" columns="FIELDID,OPTIONID" />
+    </table>
+    <table name="OS_CURRENTSTEP" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ENTRY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="STEP_ID" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="ACTION_ID" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="OWNER" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="START_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="DUE_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="FINISH_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="STATUS" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="CALLER" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_OS_CURRENTSTEP" columns="id" />
+      <index name="WF_ENTRYID" unique="false" columns="ENTRY_ID" />
+    </table>
+    <table name="OS_CURRENTSTEP_PREV" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PREVIOUS_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <primary-key name="PK_OS_CURRENTSTEP_PREV" columns="id,previous_id" />
+    </table>
+    <table name="OS_HISTORYSTEP" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ENTRY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="STEP_ID" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="ACTION_ID" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="OWNER" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="START_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="DUE_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="FINISH_DATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="STATUS" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="CALLER" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_OS_HISTORYSTEP" columns="id" />
+    </table>
+    <table name="OS_HISTORYSTEP_PREV" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PREVIOUS_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <primary-key name="PK_OS_HISTORYSTEP_PREV" columns="id,previous_id" />
+    </table>
+    <table name="OS_WFENTRY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="INITIALIZED" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="STATE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_OS_WFENTRY" columns="id" />
+    </table>
+    <table name="PERMISSIONSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_PERMISSIONSCHEME" columns="id" />
+    </table>
+    <table name="PLUGINVERSION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PLUGINNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PLUGINKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PLUGINVERSION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <primary-key name="PK_PLUGINVERSION" columns="id" />
+    </table>
+    <table name="PORTALPAGE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PAGENAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="FAV_COUNT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="LAYOUT" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PPVERSION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_PORTALPAGE" columns="id" />
+    </table>
+    <table name="PORTLETCONFIGURATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PORTALPAGE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PORTLET_ID" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="COLUMN_NUMBER" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="POSITIONSEQ" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="GADGET_XML" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="COLOR" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_PORTLETCONFIGURATION" columns="id" />
+    </table>
+    <table name="PRIORITY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PNAME" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="ICONURL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="STATUS_COLOR" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_PRIORITY" columns="id" />
+    </table>
+    <table name="PROJECT" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="URL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LEAD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="PKEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PCOUNTER" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ASSIGNEETYPE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="AVATAR" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_PROJECT" columns="id" />
+    </table>
+    <table name="PROJECTCATEGORY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_PROJECTCATEGORY" columns="id" />
+    </table>
+    <table name="PROJECTROLE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_PROJECTROLE" columns="id" />
+    </table>
+    <table name="PROJECTROLEACTOR" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PROJECTROLEID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ROLETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ROLETYPEPARAMETER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_PROJECTROLEACTOR" columns="id" />
+      <index name="ROLE_PLAYER_IDX" unique="false" columns="PROJECTROLEID,PID" />
+    </table>
+    <table name="PROJECTVERSION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROJECT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="VNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="RELEASED" sqlType="VARCHAR2" length="10" precision="0" nullable="true" jdbcType="12" />
+      <column name="ARCHIVED" sqlType="VARCHAR2" length="10" precision="0" nullable="true" jdbcType="12" />
+      <column name="URL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="RELEASEDATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <primary-key name="PK_PROJECTVERSION" columns="id" />
+    </table>
+    <table name="PROPERTYDATA" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROPERTYVALUE" sqlType="LONG RAW" length="0" precision="0" nullable="true" jdbcType="-4" />
+      <primary-key name="PK_PROPERTYDATA" columns="id" />
+    </table>
+    <table name="PROPERTYDATE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROPERTYVALUE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <primary-key name="PK_PROPERTYDATE" columns="id" />
+    </table>
+    <table name="PROPERTYDECIMAL" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROPERTYVALUE" sqlType="NUMBER" length="18" precision="6" nullable="true" jdbcType="3" />
+      <primary-key name="PK_PROPERTYDECIMAL" columns="id" />
+    </table>
+    <table name="PROPERTYENTRY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ENTITY_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ENTITY_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PROPERTY_KEY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PROPERTYTYPE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_PROPERTYENTRY" columns="id" />
+      <index name="OSPROPERTY_ALL" unique="false" columns="ENTITY_ID" />
+    </table>
+    <table name="PROPERTYNUMBER" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROPERTYVALUE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_PROPERTYNUMBER" columns="id" />
+    </table>
+    <table name="PROPERTYSTRING" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROPERTYVALUE" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_PROPERTYSTRING" columns="id" />
+    </table>
+    <table name="PROPERTYTEXT" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="PROPERTYVALUE" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <primary-key name="PK_PROPERTYTEXT" columns="id" />
+    </table>
+    <table name="QRTZ_CALENDARS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CALENDAR_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="CALENDAR" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_QRTZ_CALENDARS" columns="calendar_name" />
+    </table>
+    <table name="QRTZ_CRON_TRIGGERS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="TRIGGER_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CRONEXPERSSION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_QRTZ_CRON_TRIGGERS" columns="id" />
+    </table>
+    <table name="QRTZ_FIRED_TRIGGERS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ENTRY_ID" sqlType="VARCHAR2" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="TRIGGER_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TRIGGER_LISTENER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="FIRED_TIME" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="TRIGGER_STATE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_QRTZ_FIRED_TRIGGERS" columns="entry_id" />
+    </table>
+    <table name="QRTZ_JOB_DETAILS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="JOB_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="JOB_GROUP" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CLASS_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="IS_DURABLE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="IS_STATEFUL" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="REQUESTS_RECOVERY" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="JOB_DATA" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_QRTZ_JOB_DETAILS" columns="id" />
+    </table>
+    <table name="QRTZ_JOB_LISTENERS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="JOB" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="JOB_LISTENER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_QRTZ_JOB_LISTENERS" columns="id" />
+    </table>
+    <table name="QRTZ_SIMPLE_TRIGGERS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="TRIGGER_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="REPEAT_COUNT" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <column name="REPEAT_INTERVAL" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMES_TRIGGERED" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_QRTZ_SIMPLE_TRIGGERS" columns="id" />
+    </table>
+    <table name="QRTZ_TRIGGERS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="TRIGGER_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TRIGGER_GROUP" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="JOB" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="NEXT_FIRE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="TRIGGER_STATE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TRIGGER_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="START_TIME" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="END_TIME" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="CALENDAR_NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="MISFIRE_INSTR" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_QRTZ_TRIGGERS" columns="id" />
+    </table>
+    <table name="QRTZ_TRIGGER_LISTENERS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="TRIGGER_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TRIGGER_LISTENER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_QRTZ_TRIGGER_LISTENERS" columns="id" />
+    </table>
+    <table name="REMEMBERMETOKEN" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="TOKEN" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_REMEMBERMETOKEN" columns="id" />
+      <index name="REMEMBERMETOKEN_USERNAME_INDEX" unique="false" columns="USERNAME" />
+    </table>
+    <table name="RESOLUTION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PNAME" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="ICONURL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_RESOLUTION" columns="id" />
+    </table>
+    <table name="SALES_REPORTS" schema="JIRA4" catalog="" type="VIEW">
+      <column name="ASSIGNEE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="STATUS" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="Type_Of_Customer" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="BUSINESS_REVENUE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+    </table>
+    <table name="SCHEMEISSUESECURITIES" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SECURITY" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="SEC_TYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SEC_PARAMETER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_SCHEMEISSUESECURITIES" columns="id" />
+      <index name="SEC_SCHEME" unique="false" columns="SCHEME" />
+      <index name="SEC_SECURITY" unique="false" columns="SECURITY" />
+    </table>
+    <table name="SCHEMEISSUESECURITYLEVELS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="SCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_SCHEMEISSUESECURITYLEVELS" columns="id" />
+    </table>
+    <table name="SCHEMEPERMISSIONS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PERMISSION" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="PERM_TYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PERM_PARAMETER" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_SCHEMEPERMISSIONS" columns="id" />
+      <index name="PRMSSN_SCHEME" unique="false" columns="SCHEME" />
+    </table>
+    <table name="SEARCHREQUEST" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="FILTERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="AUTHORNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="GROUPNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PROJECTID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="REQCONTENT" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="FAV_COUNT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_SEARCHREQUEST" columns="id" />
+      <index name="SR_AUTHOR" unique="false" columns="AUTHORNAME" />
+    </table>
+    <table name="SEQUENCE_VALUE_ITEM" schema="JIRA4" catalog="" type="TABLE">
+      <column name="SEQ_NAME" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SEQ_ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_SEQUENCE_VALUE_ITEM" columns="seq_name" />
+    </table>
+    <table name="SERVICECONFIG" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="DELAYTIME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CLAZZ" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="SERVICENAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_SERVICECONFIG" columns="id" />
+    </table>
+    <table name="SHAREPERMISSIONS" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ENTITYID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="ENTITYTYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="SHARETYPE" sqlType="VARCHAR2" length="10" precision="0" nullable="true" jdbcType="12" />
+      <column name="PARAM1" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PARAM2" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_SHAREPERMISSIONS" columns="id" />
+      <index name="SHARE_INDEX" unique="false" columns="ENTITYID,ENTITYTYPE" />
+    </table>
+    <table name="TRACKBACK_PING" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUE" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="URL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="TITLE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="BLOGNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="EXCERPT" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <primary-key name="PK_TRACKBACK_PING" columns="id" />
+    </table>
+    <table name="TRUSTEDAPP" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="APPLICATION_ID" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PUBLIC_KEY" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="IP_MATCH" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="URL_MATCH" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <column name="TIMEOUT" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="CREATED_BY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="UPDATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATED_BY" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_TRUSTEDAPP" columns="id" />
+      <index name="TRUSTEDAPP_ID" unique="true" columns="APPLICATION_ID" />
+    </table>
+    <table name="UPGRADEHISTORY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="UPGRADECLASS" sqlType="VARCHAR2" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="TARGETBUILD" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_UPGRADEHISTORY" columns="upgradeclass" />
+    </table>
+    <table name="UPGRADEVERSIONHISTORY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="TIMEPERFORMED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="TARGETBUILD" sqlType="VARCHAR2" length="255" precision="0" nullable="false" jdbcType="12" />
+      <column name="TARGETVERSION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_UPGRADEVERSIONHISTORY" columns="targetbuild" />
+    </table>
+    <table name="USERASSOCIATION" schema="JIRA4" catalog="" type="TABLE">
+      <column name="SOURCE_NAME" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SINK_NODE_ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SINK_NODE_ENTITY" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="ASSOCIATION_TYPE" sqlType="VARCHAR2" length="60" precision="0" nullable="false" jdbcType="12" />
+      <column name="SEQUENCE" sqlType="NUMBER" length="9" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_USERASSOCIATION" columns="source_name,sink_node_id,sink_node_entity,association_type" />
+      <index name="USER_SINK" unique="false" columns="SINK_NODE_ID,SINK_NODE_ENTITY" />
+      <index name="USER_SOURCE" unique="false" columns="SOURCE_NAME" />
+    </table>
+    <table name="USERBASE" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="PASSWORD_HASH" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_USERBASE" columns="id" />
+      <index name="OSUSER_NAME" unique="false" columns="USERNAME" />
+    </table>
+    <table name="USERHISTORYITEM" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ENTITYTYPE" sqlType="VARCHAR2" length="10" precision="0" nullable="true" jdbcType="12" />
+      <column name="ENTITYID" sqlType="VARCHAR2" length="60" precision="0" nullable="true" jdbcType="12" />
+      <column name="USERNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="LASTVIEWED" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="DATA" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <primary-key name="PK_USERHISTORYITEM" columns="id" />
+      <index name="UH_TYPE_USER_ENTITY" unique="true" columns="ENTITYTYPE,USERNAME,ENTITYID" />
+    </table>
+    <table name="VERSIONCONTROL" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="VCSNAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="VCSDESCRIPTION" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="VCSTYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_VERSIONCONTROL" columns="id" />
+    </table>
+    <table name="WORKFLOWSCHEME" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="NAME" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTION" sqlType="VARCHAR2" length="4000" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_WORKFLOWSCHEME" columns="id" />
+    </table>
+    <table name="WORKFLOWSCHEMEENTITY" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="SCHEME" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="WORKFLOW" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ISSUETYPE" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PK_WORKFLOWSCHEMEENTITY" columns="id" />
+      <index name="WORKFLOW_SCHEME" unique="false" columns="SCHEME" />
+    </table>
+    <table name="WORKLOG" schema="JIRA4" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" length="18" precision="0" nullable="false" jdbcType="3" />
+      <column name="ISSUEID" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="AUTHOR" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="GROUPLEVEL" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="ROLELEVEL" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <column name="WORKLOGBODY" sqlType="CLOB" length="4000" precision="0" nullable="true" jdbcType="2005" />
+      <column name="CREATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="UPDATEAUTHOR" sqlType="VARCHAR2" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="UPDATED" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="STARTDATE" sqlType="DATE" length="7" precision="0" nullable="true" jdbcType="91" />
+      <column name="TIMEWORKED" sqlType="NUMBER" length="18" precision="0" nullable="true" jdbcType="3" />
+      <primary-key name="PK_WORKLOG" columns="id" />
+      <index name="WORKLOG_ISSUE" unique="false" columns="ISSUEID" />
+    </table>
+  </data-source>
+</component>

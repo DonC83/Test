@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
+  <component name="ArtifactManager">
+    <artifact name="GWTComponent:GWT">
+      <output-path>$PROJECT_DIR$/out/artifacts/GWTComponent_GWT</output-path>
+      <root id="root">
+        <element id="gwt-compiler-output" facet="GWTComponent/gwt/GWT" />
+      </root>
+    </artifact>
+    <artifact name="CellTableExample:GWT">
+      <output-path>$PROJECT_DIR$/out/artifacts/CellTableExample_GWT</output-path>
+      <root id="root">
+        <element id="gwt-compiler-output" facet="CellTableExample/gwt/GWT" />
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
@@ -20,6 +37,7 @@
   <component name="CopyrightManager" default="">
     <module2copyright />
   </component>
+  <component name="DataSourceManagerImpl" compressed="false" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -27,7 +45,40 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FacetAutodetectingManager">
+    <autodetection-disabled>
+      <facet-type id="gwt">
+        <modules>
+          <module name="ScollPanelEx">
+            <files>
+              <file url="file://$PROJECT_DIR$/ScollPanelEx/src/com/test/Test.gwt.xml" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
+      <facet-type id="web">
+        <modules>
+          <module name="ScollPanelEx">
+            <files>
+              <file url="file://$PROJECT_DIR$/ScollPanelEx/war/WEB-INF/web.xml" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
+    </autodetection-disabled>
+  </component>
   <component name="IdProvider" IDEtalkID="5FEC72503EB3537F456322DD186B6103" />
+  <component name="InspectionProjectProfileManager">
+    <profiles>
+      <profile version="1.0" is_locked="false">
+        <option name="myName" value="Project Default" />
+        <option name="myLocal" value="false" />
+      </profile>
+    </profiles>
+    <option name="PROJECT_PROFILE" />
+    <option name="USE_PROJECT_PROFILE" value="false" />
+    <version value="1.0" />
+  </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
     <option name="OPTION_SCOPE" value="protected" />
@@ -168,8 +219,14 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CellTableExample/CellTableExample.iml" filepath="$PROJECT_DIR$/CellTableExample/CellTableExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GWTComponent/GWTComponent.iml" filepath="$PROJECT_DIR$/GWTComponent/GWTComponent.iml" />
       <module fileurl="file://$PROJECT_DIR$/RabbitMQ/RabbitMQ.iml" filepath="$PROJECT_DIR$/RabbitMQ/RabbitMQ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScollPanelEx/ScollPanelEx.iml" filepath="$PROJECT_DIR$/ScollPanelEx/ScollPanelEx.iml" />
     </modules>
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
@@ -179,6 +236,15 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
+    <library name="gwt-user">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/gwt-2.3.0/gwt-user.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/gwt-2.3.0/gwt-user.jar!/" />
+      </SOURCES>
+    </library>
     <library name="rabbitmq-deps">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/RabbitMQ/lib/commons-cli-1.1.jar!/" />
@@ -186,7 +252,9 @@
         <root url="jar://$PROJECT_DIR$/RabbitMQ/lib/commons-io-1.2.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="file://$USER_HOME$/libraries/rabbitmq-java-client-2.6.1/src" />
+      </SOURCES>
     </library>
   </component>
 </project>
