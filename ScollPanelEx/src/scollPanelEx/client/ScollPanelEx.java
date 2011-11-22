@@ -5,9 +5,13 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.user.cellview.client.CellTable;
+import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.view.client.SelectionChangeEvent;
+import com.google.gwt.view.client.SelectionModel;
+import com.google.gwt.view.client.SingleSelectionModel;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -87,6 +91,9 @@ public class ScollPanelEx implements EntryPoint {
 
             p.setIdentified(df.format(new Date(System.currentTimeMillis()-((int)Math.random()*500000))));
 
+            p.setHidden1("hidden1 " + i);
+            p.setHidden2("hidden2 " + i);
+
             patternsList.add(p);
         }
 
@@ -154,7 +161,7 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(intervalColumn, "Interval");
-        table.setColumnWidth(intervalColumn, "130px");
+        table.setColumnWidth(intervalColumn, "70px");
 
         TextColumn<Patterns> patternColumn = new TextColumn<Patterns>() {
             @Override
@@ -203,11 +210,24 @@ public class ScollPanelEx implements EntryPoint {
             }
         };
         table.addColumn(typeCol, "Type");
-        table.setColumnWidth(patternColumn, "72px");
+        table.setColumnWidth(patternColumn, "52px");
+
+        table.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.DISABLED);
+
+        final SingleSelectionModel<Patterns> selectionModel = new SingleSelectionModel<Patterns>();
+        table.setSelectionModel(selectionModel);
+        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler(){
+
+            public void onSelectionChange(SelectionChangeEvent event) {
+                System.out.println(selectionModel.getSelectedObject().toString());
+            }
+        });
 
 
-//        table.setWidth("100%", true);
+        table.setWidth("100%", false);
         table.setRowData(data);
+        if (data.size()>0)
+            selectionModel.setSelected(data.get(0), true);
         return table;
     }
 

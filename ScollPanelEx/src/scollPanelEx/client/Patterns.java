@@ -125,4 +125,11 @@ public class Patterns {
     public void setHidden2(String hidden2) {
         this.hidden2 = hidden2;
     }
+
+    public String toString() {
+        return getAlert() + "; " + getExchange() + "; " + getSymbol() + "; " +
+                getDirection() + "; " + getPattern() + "; " + getInterval() + "; " +
+                getLength() + "; " + getQuality() + "; " + getType() + "; " + getHidden1() + "; " +
+                getHidden2();
+    }
 }
