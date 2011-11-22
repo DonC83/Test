@@ -26,6 +26,8 @@ public class Patterns {
 
     private String type;
 
+    private 
+
     public String getAlert() {
         return alert;
     }
