@@ -26,7 +26,9 @@ public class Patterns {
 
     private String type;
 
-    private 
+    private String hidden1;
+
+    private String hidden2;
 
     public String getAlert() {
         return alert;
@@ -108,4 +110,19 @@ public class Patterns {
         this.type = type;
     }
 
+    public String getHidden1() {
+        return hidden1;
+    }
+
+    public void setHidden1(String hidden1) {
+        this.hidden1 = hidden1;
+    }
+
+    public String getHidden2() {
+        return hidden2;
+    }
+
+    public void setHidden2(String hidden2) {
+        this.hidden2 = hidden2;
+    }
 }
