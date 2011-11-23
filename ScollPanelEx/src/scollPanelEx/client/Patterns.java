@@ -1,5 +1,7 @@
 package scollPanelEx.client;
 
+import com.google.gwt.user.client.ui.Image;
+
 /**
  * The source, with you may it be old master
  * Date: 2011/11/22
