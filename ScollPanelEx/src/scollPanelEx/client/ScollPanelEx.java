@@ -4,12 +4,15 @@ import com.google.gwt.cell.client.ImageCell;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy;
 import com.google.gwt.user.cellview.client.TextColumn;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.SelectionChangeEvent;
@@ -40,13 +43,19 @@ public class ScollPanelEx implements EntryPoint {
 //        sp.setSize("200px", "100px");
 //
 //        RootPanel.get("main1").add(sp);
-//
-//        ScrollPanel sp2 = new ScrollPanel(createCellTable(createData()));
-//        sp2.setSize("900px", "200px");
-//        RootPanel.get("main2").add(sp2);
-//
 
-        CellTable<Patterns> contentTable = createCellTable(createData());
+
+        Grid2Headers g2h = new Grid2Headers();
+
+        CellTable<Patterns> content2 = g2h.createCellTable(createData());
+        ScrollPanel sp2 = new ScrollPanel(content2);
+        sp2.setSize("735px", "200px");
+        RootPanel.get("main2").add(sp2);
+
+
+
+        GridTest gt = new GridTest();
+        CellTable<Patterns> contentTable = gt.createCellTable(createData());
 //        CellTable<Patterns> contentTable = null;
         ScrollPanel sp3 = new ScrollPanel();
 
@@ -62,22 +71,19 @@ public class ScollPanelEx implements EntryPoint {
         }
         sp3.setSize("735px","200px");
 
-//        CellTable<Patterns> headers = createCellTable(new ArrayList<Patterns>());
-        CellTable<Patterns> headers = createHeaderTable();
-//        HeaderPanel headerPanel = new HeaderPanel();
-//        headerPanel.setHeaderWidget(headers);
-//        headerPanel.setContentWidget(sp3);
-//        headerPanel.setSize("735px", "200px");
-//        headerPanel.setVisible(true);
-//        RootPanel.get("main3").add(headerPanel);
+
+//        CellTable<Patterns> headers = gt.createHeaderTable();
+        HorizontalPanel headers = gt.genHeaders();
 
         VerticalPanel vPanel = new VerticalPanel();
-//        vPanel.setSize("900px", "200px");
         vPanel.add(headers);
         vPanel.add(sp3);
         vPanel.setStyleName("custom-grid");
 
         RootPanel.get("main4").add(vPanel);
+
+
+//        RootPanel.get("main3").add(genHeaders());
 //
 //
 //        List<String> headerNames = new ArrayList<String>();
@@ -169,278 +175,6 @@ public class ScollPanelEx implements EntryPoint {
 
 
         return patternsList;
-    }
-
-
-    interface TableResources extends CellTable.Resources {
-
-        @Source({CellTable.Style.DEFAULT_CSS, "tablestyles.css"})
-        CellTable.Style cellTableStyle();
-    }
-
-
-    private CellTable<Patterns> createCellTable(List<Patterns> data) {
-        CellTable.Resources resources = GWT.create(TableResources.class);
-        CellTable<Patterns> table = new CellTable<Patterns>(data.size(), resources);
-
-        TextColumn<Patterns> alertColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getAlert();
-            }
-        };
-        table.addColumn(alertColumn);
-
-
-        TextColumn<Patterns> exchangeColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getExchange();
-            }
-        };
-//        exchangeColumn.setSortable(true);
-
-        table.addColumn(exchangeColumn);
-
-        TextColumn<Patterns> symbolColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getSymbol();
-            }
-        };
-        table.addColumn(symbolColumn);
-
-        Column<Patterns, String> directionColumn = new Column<Patterns, String>(new ImageCell()) {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getDirection();
-            }
-        };
-        table.addColumn(directionColumn);
-
-
-
-        TextColumn<Patterns> intervalColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getInterval();
-            }
-        };
-        table.addColumn(intervalColumn);
-
-        TextColumn<Patterns> patternColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getPattern();
-            }
-        };
-        table.addColumn(patternColumn);
-
-
-        TextColumn<Patterns> identifiedColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getIdentified();
-            }
-        };
-        table.addColumn(identifiedColumn);
-
-        TextColumn<Patterns> lengthCol = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getLength();
-            }
-        };
-        table.addColumn(lengthCol);
-
-
-
-        Column<Patterns, String> qualityCol = new Column<Patterns, String>(new ImageCell()) {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getQuality();
-            }
-        };
-        table.addColumn(qualityCol);
-
-
-        TextColumn<Patterns> typeCol = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getType();
-            }
-        };
-        table.addColumn(typeCol);
-
-        table.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.DISABLED);
-
-        final SingleSelectionModel<Patterns> selectionModel = new SingleSelectionModel<Patterns>();
-        table.setSelectionModel(selectionModel);
-        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler(){
-
-            public void onSelectionChange(SelectionChangeEvent event) {
-                System.out.println(selectionModel.getSelectedObject().toString());
-            }
-        });
-
-        table.setWidth("720px", true);
-
-        table.setColumnWidth(alertColumn, 20, Style.Unit.PX);
-        table.setColumnWidth(exchangeColumn, 80, Style.Unit.PX);
-        table.setColumnWidth(symbolColumn, 120, Style.Unit.PX);
-        table.setColumnWidth(directionColumn, 20, Style.Unit.PX);
-        table.setColumnWidth(intervalColumn, 70, Style.Unit.PX);
-        table.setColumnWidth(patternColumn, 140, Style.Unit.PX);
-        table.setColumnWidth(identifiedColumn, 70, Style.Unit.PX);
-        table.setColumnWidth(lengthCol, 60, Style.Unit.PX);
-        table.setColumnWidth(qualityCol, 65, Style.Unit.PX);
-        table.setColumnWidth(typeCol, 75, Style.Unit.PX);
-
-
-
-        if (data.size()>0) {
-            table.setRowData(data);
-            selectionModel.setSelected(data.get(0), true);
-        } else {
-            return null;
-        }
-
-        return table;
-    }
-
-    private CellTable<Patterns> createHeaderTable() {
-        CellTable.Resources resources = GWT.create(TableResources.class);
-        CellTable<Patterns> table = new CellTable<Patterns>(0, resources);
-
-        TextColumn<Patterns> alertColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getAlert();
-            }
-        };
-        table.addColumn(alertColumn, ".");
-
-
-        TextColumn<Patterns> exchangeColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getExchange();
-            }
-        };
-//        exchangeColumn.setSortable(true);
-
-        table.addColumn(exchangeColumn, "Exchange");
-
-
-        TextColumn<Patterns> symbolColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getSymbol();
-            }
-        };
-        table.addColumn(symbolColumn, "Symbol");
-
-
-        TextColumn<Patterns> directionColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getDirection();
-            }
-        };
-        table.addColumn(directionColumn, ".");
-
-
-        TextColumn<Patterns> intervalColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getInterval();
-            }
-        };
-        table.addColumn(intervalColumn, "Interval");
-
-        TextColumn<Patterns> patternColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getPattern();
-            }
-        };
-        table.addColumn(patternColumn, "Pattern");
-
-
-        TextColumn<Patterns> identifiedColumn = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getIdentified();
-            }
-        };
-        table.addColumn(identifiedColumn, "Identified");
-
-
-
-        TextColumn<Patterns> lengthCol = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getLength();
-            }
-        };
-        table.addColumn(lengthCol, "Length");
-
-
-
-        TextColumn<Patterns> qualityCol = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getQuality();
-            }
-        };
-        table.addColumn(qualityCol, "Quality");
-
-
-        TextColumn<Patterns> typeCol = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getType();
-            }
-        };
-        table.addColumn(typeCol, "Type");
-
-        TextColumn<Patterns> blank = new TextColumn<Patterns>() {
-            @Override
-            public String getValue(Patterns object) {
-                return object.getType();
-            }
-        };
-        
-
-//        table.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.DISABLED);
-//
-//        final SingleSelectionModel<Patterns> selectionModel = new SingleSelectionModel<Patterns>();
-//        table.setSelectionModel(selectionModel);
-//        selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler(){
-//
-//            public void onSelectionChange(SelectionChangeEvent event) {
-//                System.out.println(selectionModel.getSelectedObject().toString());
-//            }
-//        });
-
-        table.setWidth("735px", true);
-
-        table.setColumnWidth(alertColumn, 20, Style.Unit.PX);
-        table.setColumnWidth(exchangeColumn, 80, Style.Unit.PX);
-        table.setColumnWidth(symbolColumn, 120, Style.Unit.PX);
-        table.setColumnWidth(directionColumn, 20, Style.Unit.PX);
-        table.setColumnWidth(intervalColumn, 70, Style.Unit.PX);
-        table.setColumnWidth(patternColumn, 140, Style.Unit.PX);
-        table.setColumnWidth(identifiedColumn, 70, Style.Unit.PX);
-        table.setColumnWidth(lengthCol, 60, Style.Unit.PX);
-        table.setColumnWidth(qualityCol, 65, Style.Unit.PX);
-        table.setColumnWidth(typeCol, 90, Style.Unit.PX);
-
-
-
-
-
-        return table;
     }
 
 }
