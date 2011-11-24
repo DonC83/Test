@@ -53,6 +53,14 @@ body, td, a, div, .p {
     cursor: hand;
 }
 
+.custom-grid-nolbl {
+    color: #f0f0f0;
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    cursor: pointer;
+    cursor: hand;
+}
+
 .custom-grid-lbl-asc {
     text-align: center;
     border-left: 1px solid #cccccc;

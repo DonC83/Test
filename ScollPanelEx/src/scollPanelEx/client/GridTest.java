@@ -367,54 +367,68 @@ public class GridTest {
         }
 
         public void onClick(ClickEvent event) {
-
+            resetHeaderStyles();
             table.sortColumn(headerColumn);
             if (table.isSortAscending()) {
                 colLabel.setStyleName("custom-grid-lbl-asc");
             } else {
                 colLabel.setStyleName("custom-grid-lbl-desc");
             }
-//            System.out.println(table.isSortAscending());
         }
     }
 
-    public HorizontalPanel genHeaders() {
-        HorizontalPanel hPanel = new HorizontalPanel();
-        hPanel.setStyleName("custom-grid-header");
+    private Label heading1;
+    private Label heading2;
+    private Label heading3;
+    private Label heading4;
+    private Label heading5;
+    private Label heading6;
+    private Label heading7;
+    private Label heading8;
+    private Label heading9;
+    private Label heading10;
 
-        Label heading1 = new Label(".");
-        Label heading2 = new Label("Exchange");
-        heading2.addClickHandler(new HeaderClickHandler(heading2, exchangeColumn));
 
-        Label heading3 = new Label("Symbol");
-        heading3.addClickHandler(new HeaderClickHandler(heading3, symbolColumn));
-
-
-        Label heading4 = new Label(".");
-        Label heading5 = new Label("Interval");
-        heading5.addClickHandler(new HeaderClickHandler(heading5, intervalColumn));
-        Label heading6 = new Label("Pattern");
-        Label heading7 = new Label("Identified");
-        heading7.addClickHandler(new HeaderClickHandler(heading7, identifiedColumn));
-
-        Label heading8 = new Label("Length");
-        Label heading9 = new Label("Quality");
-        Label heading10 = new Label("Type");
-        heading10.addClickHandler(new HeaderClickHandler(heading10, typeCol));
-        Label nospace = new Label("");
-
-        heading1.setStyleName("custom-grid-lbl");
+    private void resetHeaderStyles() {
+        heading1.setStyleName("custom-grid-nolbl");
         heading2.setStyleName("custom-grid-lbl");
         heading3.setStyleName("custom-grid-lbl");
-        heading4.setStyleName("custom-grid-lbl");
+        heading4.setStyleName("custom-grid-nolbl");
         heading5.setStyleName("custom-grid-lbl");
         heading6.setStyleName("custom-grid-lbl");
         heading7.setStyleName("custom-grid-lbl");
         heading8.setStyleName("custom-grid-lbl");
         heading9.setStyleName("custom-grid-lbl");
         heading10.setStyleName("custom-grid-lbl");
-        nospace.setStyleName("custom-grid-lbl");
+    }
 
+    public HorizontalPanel genHeaders() {
+        HorizontalPanel hPanel = new HorizontalPanel();
+        hPanel.setStyleName("custom-grid-header");
+
+        heading1 = new Label(".");
+        heading2 = new Label("Exchange");
+        heading2.addClickHandler(new HeaderClickHandler(heading2, exchangeColumn));
+
+        heading3 = new Label("Symbol");
+        heading3.addClickHandler(new HeaderClickHandler(heading3, symbolColumn));
+
+
+        heading4 = new Label(".");
+        heading5 = new Label("Interval");
+        heading5.addClickHandler(new HeaderClickHandler(heading5, intervalColumn));
+        heading6 = new Label("Pattern");
+        heading7 = new Label("Identified");
+        heading7.addClickHandler(new HeaderClickHandler(heading7, identifiedColumn));
+
+        heading8 = new Label("Length");
+        heading9 = new Label("Quality");
+        heading10 = new Label("Type");
+        heading10.addClickHandler(new HeaderClickHandler(heading10, typeCol));
+        Label nospace = new Label("");
+
+        resetHeaderStyles();
+        nospace.setStyleName("custom-grid-lbl");
 
         heading1.setWidth("19px");
         heading2.setWidth("79px");
@@ -427,7 +441,6 @@ public class GridTest {
         heading9.setWidth("64px");
         heading10.setWidth("73px");
         nospace.setWidth("13px");
-
 
         hPanel.add(heading1);
         hPanel.add(heading2);
