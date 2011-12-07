@@ -1,0 +1,126 @@
+@def selectionBorderWidth 1px;
+.cellTableWidget {
+}
+
+.cellTableFirstColumn {
+}
+
+.cellTableLastColumn {
+
+}
+
+.cellTableFooter {
+}
+
+.cellTableHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000000;
+    padding: 0;
+    text-align: center;
+    background: #f0f0f0; /* legend headings */
+    border-left: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    white-space: normal;
+    vertical-align:bottom;
+}
+
+.cellTableCell {
+    font-size : 10px;
+    text-align: left;
+    padding: 1px 1px;
+    cursor: pointer;
+    cursor: hand;
+    /*border: 2px solid #000000;*/
+}
+
+.cellTableFirstColumnFooter {
+
+}
+
+.cellTableFirstColumnHeader {
+
+}
+
+.cellTableLastColumnFooter {
+
+}
+
+.cellTableLastColumnHeader {
+
+}
+
+.cellTableSortableHeader {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.cellTableSortableHeader:hover {
+    /*color: #6c6b6b;*/
+}
+
+.cellTableSortedHeaderAscending {
+
+}
+
+.cellTableSortedHeaderDescending {
+
+}
+
+.cellTableEvenRow {
+    background: #ffffff;
+}
+
+.cellTableEvenRowCell {
+    border: selectionBorderWidth solid #cccccc;
+}
+
+.cellTableOddRow {
+    /*background: #f3f7fb;*/
+    background: #f0f0f0;
+}
+
+.cellTableOddRowCell {
+    /*border: selectionBorderWidth solid #f3f7fb;*/
+    border: selectionBorderWidth solid #cccccc;
+}
+
+.cellTableHoveredRow {
+    background: #ffffaa;
+}
+
+.cellTableHoveredRowCell {
+    border: selectionBorderWidth solid #cccccc;
+}
+
+.cellTableKeyboardSelectedRow {
+    background: #ffffaa;
+}
+
+.cellTableKeyboardSelectedRowCell {
+    border: selectionBorderWidth solid #cccccc;
+}
+
+.cellTableSelectedRow {
+    background: #ffffaa;
+    color: #000000;
+    height: auto;
+    overflow: auto;
+}
+
+.cellTableSelectedRowCell {
+    border: selectionBorderWidth solid #cccccc;
+}
+
+/**
+ * The keyboard selected cell is visible over selection.
+ */
+.cellTableKeyboardSelectedCell {
+    border: selectionBorderWidth solid #cccccc;
+}
+
+.cellTableLoading {
+    margin: 30px;
+}

@@ -1,0 +1,3062 @@
+/*=====================
+    RESET
+=====================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+
+tbody{
+
+    /*  overflow-x:hidden; !important
+    overflow-y:scroll;  !important
+    display:block;*/
+
+}
+
+a:link { color: green; text-decoration: none }
+a:active { color: green; text-decoration: none }
+a:visited { color: green; text-decoration: none }
+a:hover { color: #666666; text-decoration: none }
+
+menu-Panel {
+    background: url(images/gradient.png) repeat-y center;
+    padding: 9px 10px 8px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border:0;
+    margin: 0 0 5px 0;
+}
+
+
+/* ----------------------------------------- V2 ADDITIONS --- */
+/* (other changes made in place */
+
+
+table.pg-header {
+    background: #FFFFFF;
+    margin: 0 0 5px 0;
+    font-size: 11px;
+    width : 918px; height : 60px;
+}
+
+table.pg-header td {
+    font-size: 11px;
+}
+
+.label {
+    margin-right: 0.5em;
+    vertical-align:bottom;
+}
+
+.select {
+    font-size: 11px;
+    vertical-align:bottom;
+    height:17px;
+}
+
+.language {
+    position: absolute;
+    padding: 0 24px 0 24px;
+    font-size: 11px;
+    font-size: 11px;
+    overflow: hidden;
+}
+
+
+div.pg-title {
+    background: #0a6402 url(aclite/gradient.png) repeat-y center;
+    padding: 9px 10px 8px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFF;
+    border:0;
+    margin: 0 0 5px 0;
+}
+
+table.panel {
+    border: 1px solid #e1e1e1;
+    padding: 2px;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+table.panel-content {
+    width: 100%;
+}
+
+table.panel-content td {
+    padding: 5px 0 5px 0;
+}
+
+td.bulb_spacer {
+    width: 20px;
+}
+
+p.new-search {
+    padding: 18px 0 5px 0;
+    text-align: center;
+}
+
+div.ac-legend-pad {
+    padding : 0 8px 0 8px;
+    border: 1px solid #d4d4d4;
+    border-width: 0 0 0 1px;
+}
+
+
+table.ac-legend {
+    height: 310px;
+    width: 150px;
+}
+
+table.ac-legend td {
+    border: 1px solid #d4d4d4;
+    border-width: 0 0 1px;
+    padding: 0 2px 0 2px;
+}
+
+table.audio {
+    width: 100%;
+}
+
+table.audio td {
+    padding: 18px 0 5px 0;
+    text-align: center;
+}
+
+table.audio img, table.audio span {
+    margin: 0 2px 0 2px;
+    vertical-align: middle;
+}
+
+div.menu {
+    width: 140px;
+    margin: 0;
+    padding: 0;
+}
+
+div.menu h1 {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 3px 4px 3px;
+}
+
+div.menu p {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0;
+    padding: 3px 3px 2px 3px;
+    border: 1px solid #c2c2c2;
+    border-width: 1px 0 0 0;
+}
+
+div.menu a {
+    color: #0f9c00;
+    text-decoration: none;
+}
+div.menu a: hover; {
+    color: #0f9c00;
+    text-decoration: underline;
+}
+
+div.menu span {
+    display: block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    color: #666666;
+}
+
+
+
+
+
+/* ----------------------------------------- V2 ADDITIONS END */
+
+
+.ac-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #009900;
+    background-image: url(/aclite/icons/back.png);
+    background-repeat: repeat-x;
+}
+
+.ac-MenuPanel-Header {
+    padding: 1px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #009900;
+    cursor: pointer;
+}
+
+/* -- menu headings */
+
+table.ac-MenuPanel-HeaderLeft td {
+    cursor: default;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight:normal;
+    background: #e1e1e1;
+    color: black;
+    text-align: left;
+    margin: 0;
+    height: 24px;
+    padding: 0 3px 0 5px;
+}
+
+.ac-MenuPanel-HeaderLeft {
+    cursor: default;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight:normal;
+    background: #e1e1e1;
+    color: black;
+    text-align: left;
+    margin: 0;
+    padding: 0 3px 0 5px;
+}
+
+
+/* -- table headings
+	 colour
+	 overrides??
+*/
+
+.ac-TableHeader {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+/* legend headings */
+    font-weight: bold;
+    color: #000;
+}
+
+table.ac-Table {
+    border: 1px solid #a1a1a1;
+}
+
+td.ac-TableBackGround {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    color: #666666;
+    background: #CC00CC;
+    vertical-align: middle;
+}
+
+.ac-Label {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+.ac-Label-Small {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    color: black;
+}
+
+.ac-Hand {
+    cursor: pointer;
+}
+
+.ac-Logout {
+    cursor: pointer;
+    color: green;
+    text-decoration: underline;
+}
+
+
+
+.ac-LeftPadding {
+    padding-left: 10;
+}
+
+.dialogVPanel {
+    margin: 5px;
+}
+
+.serverResponseLabelError {
+    color: red;
+}
+
+
+/* -- main application panels -- */
+
+.ac-UserLabel  {
+/*background: #FFF;  this conflicts with Smart GWT ListGrid  */
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.ac-RootPanel td  {
+/*background: #FFF;  this conflicts with Smart GWT ListGrid  */
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px;
+    text-align: left;
+}
+/* -- left and right top panels */
+.ac-StackPanel td {
+
+    border: 0;
+    background: #FFF;
+    padding: 0; /*1px;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.ac-StackPanel .gwt-StackPanelItem-selected div {
+    cursor: default;
+    border: 1px solid #f5f5f5;
+    border-right-color: #ddd;
+    border-bottom-color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight:normal;
+    background-color: #f0f0f0;
+    font-color: black;
+    text-align: left;
+    margin: 0 0 0 0;
+    padding: 1px 1px 1px;
+}
+
+.ac-StackPanel .gwt-StackPanelItem div {
+    cursor: default;
+    border: 1px solid #f5f5f5;
+    border-right-color: #ddd;
+    border-bottom-color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight:normal;
+    background-color: #f0f0f0;
+    font-color: black;
+    text-align: left;
+    margin: 0 0 0 0;
+    padding: 1px 1px 1px;
+}
+
+.ac-Disclaimer {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    color: grey;
+    text-align: left;
+}
+
+.ac-menu-Panel {
+    background: url(images/gradient.png) repeat-y center top;
+    padding: 9px 10px 8px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border:0;
+    margin: 0 0 5px 0;
+    text-align: left;
+/*WIDTH OF THE TOPMOST MENT PANEL DECREASED TO MATCH */
+    width : 725px;
+    height : 35px;
+}
+
+
+/*
+	Power stats specific styles
+*/
+.ac-PS-Button {
+    background-image: url(images/but_tab.png);
+    color: white;
+    margin: 0pt;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0px;
+    background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ac-PS-Button:active {
+    background-image: url(images/but_tab_selected.png);
+}
+.ac-PS-Button:hover {
+    background-image: url(images/but_tab_selected.png);
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: Green;
+}
+.ac-PS-Button[disabled] {
+    cursor: default;
+    color: #888;
+}
+.ac-PS-Button[disabled]:hover {
+    border: 1px outset #ccc;
+}
+
+.ac-PS-Button-Selected {
+    background-image: url(images/but_tab_selected.png);
+    color: Green;
+    margin: 0pt;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0px;
+    background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ac-PS-Button[disabled] {
+    cursor: default;
+    color: #888;
+}
+.ac-PS-Button[disabled]:hover {
+    border: 1px outset #ccc;
+}
+
+.ac-PS-Button-noback {
+    /*background-image: url(images/but_tab_noback.png);
+     */
+    background-image: url(images/but_tab_grey.png);
+    color: green;
+    margin: 0pt;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0px;
+    background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    /*text-decoration: underline;
+    */}
+.ac-PS-Button-noback:active {
+
+}
+.ac-PS-Button-noback:hover {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: Green;
+}
+.ac-PS-Button-noback[disabled] {
+    cursor: default;
+    color: #888;
+}
+.ac-PS-Button-noback[disabled]:hover {
+    border: 1px outset #ccc;
+}
+
+.ac-PS-Button-Selected-noback {
+    /*background-image: url(images/but_tab_noback.png);
+     color: Black;*/
+    background-image: url(images/but_tab_grey_selected.png);
+    color: White;
+    margin: 0pt;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0px;
+    background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ac-PS-Label {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    horizontal-align: right;
+}
+
+
+/**
+Copied from the Chrome theme
+*******************************
+*/
+
+/**
+ * The file contains styles for GWT widgets in the chrome theme.
+ *
+ * In order to maintain cross-browser compatibility, the following syntax is
+ * used to create IE6 specific style rules:
+ *    .gwt-Widget {
+ *      property: rule applies to all browsers
+ *      -property: rule applies only to IE6 (overrides previous rule)
+ *    }
+ *    * html .gwt-Widget {
+ *      property: rule applies to all versions of IE
+ *    }
+ */
+
+body, table td, select {
+    font-family: Arial Unicode MS, Arial, sans-serif;
+    font-size: small;
+}
+pre {
+    font-family: "courier new", courier;
+    font-size: small;
+}
+body {
+    color: black;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+/* -- set body props */
+    direction: ltr;
+    background: #FFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+}
+
+a, a:visited, a:hover {
+    color: #0f9c00;
+}
+
+/**
+ * The reference theme can be used to determine when this style sheet has
+ * loaded.  Create a hidden div element with absolute position, assign the style
+ * name below, and attach it to the DOM.  Use a timer to detect when the
+ * element's height and width are set to 5px.
+ */
+.gwt-Reference-chrome {
+    height: 5px;
+    width: 5px;
+    zoom: 1;
+}
+
+.gwt-Button {
+    /*background-image: url(/aclite/icons/hborder.png);
+     background-repeat: repeat-x;
+     background-attachment: scroll;
+     background-position: 0px -27px;*/
+    color: white;
+    margin: 0pt;
+    padding: 1px;
+    border-top: 1px outset #cccccc;
+    border-bottom: 1px outset #cccccc;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: 16890a;
+    cursor: pointer;
+}
+.gwt-Button:active {
+    border: 1px inset #ccc;
+}
+.gwt-Button:hover {
+    border-color: #9cf #69e #69e #7af;
+}
+.gwt-Button[disabled] {
+    cursor: default;
+    color: #888;
+}
+.gwt-Button[disabled]:hover {
+    border: 1px outset #ccc;
+}
+
+.gwt-CheckBox {
+
+
+}
+.gwt-CheckBox-disabled {
+    color: #888;
+}
+
+
+/* -> 
+APP BORDER */
+
+.gwt-DecoratorPanel {
+}
+.gwt-DecoratorPanel .topCenter,
+.gwt-DecoratorPanel .bottomCenter {
+/*  background: url(images/hborder.png) repeat-x; */
+}
+.gwt-DecoratorPanel .middleLeft,
+.gwt-DecoratorPanel .middleRight {
+/* background: url(images/vborder.png) repeat-y; */
+}
+.gwt-DecoratorPanel .topLeftInner,
+.gwt-DecoratorPanel .topRightInner,
+.gwt-DecoratorPanel .bottomLeftInner,
+.gwt-DecoratorPanel .bottomRightInner {
+    width: 5px;
+    height: 5px;
+    zoom: 1;
+}
+.gwt-DecoratorPanel .topLeft {
+    /* background: url(images/corner.png) no-repeat 0px 0px;
+-background: url(images/corner_ie6.png) no-repeat 0px 0px; */
+}
+.gwt-DecoratorPanel .topRight {
+    /* background: url(images/corner.png) no-repeat -5px 0px;
+-background: url(images/corner_ie6.png) no-repeat -5px 0px; */
+}
+.gwt-DecoratorPanel .bottomLeft {
+    /* background: url(images/corner.png) no-repeat 0px -5px;
+-background: url(images/corner_ie6.png) no-repeat 0px -5px; */
+}
+.gwt-DecoratorPanel .bottomRight {
+    /* background: url(images/corner.png) no-repeat -5px -5px;
+-background: url(images/corner_ie6.png) no-repeat -5px -5px; */
+}
+* html .gwt-DecoratorPanel .topLeftInner,
+* html .gwt-DecoratorPanel .topRightInner,
+* html .gwt-DecoratorPanel .bottomLeftInner,
+* html .gwt-DecoratorPanel .bottomRightInner {
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+}
+
+/* <- */
+
+
+.gwt-DialogBox {
+    width: 400px;
+    z-index:  2147483650;
+}
+
+.gwt-DialogBox .Caption {
+    background: #ebebeb url(images/hborder.png) repeat-x 0px -2003px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #009900;
+    background-image: url(/aclite/icons/back.png);
+    background-repeat: repeat-x;
+    padding: 4px 4px 4px 8px;
+    cursor: default;
+    border-bottom: 1px solid #bbbbbb;
+    border-top: 5px solid #e3e3e3;
+}
+.gwt-DialogBox .dialogContent {
+}
+.gwt-DialogBox .dialogMiddleCenter {
+    padding: 3px;
+    background: white;
+}
+.gwt-DialogBox .dialogBottomCenter {
+    background: url(images/hborder.png) repeat-x 0px -4px;
+    -background: url(images/hborder_ie6.png) repeat-x 0px -4px;
+}
+.gwt-DialogBox .dialogMiddleLeft {
+    background: url(images/vborder.png) repeat-y;
+}
+.gwt-DialogBox .dialogMiddleRight {
+    background: url(images/vborder.png) repeat-y -4px 0px;
+    -background: url(images/vborder_ie6.png) repeat-y -4px 0px;
+}
+.gwt-DialogBox .dialogTopLeftInner {
+    width: 5px;
+    zoom: 1;
+}
+.gwt-DialogBox .dialogTopRightInner {
+    width: 8px;
+    zoom: 1;
+}
+.gwt-DialogBox .dialogBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    zoom: 1;
+}
+.gwt-DialogBox .dialogBottomRightInner {
+    width: 5px;
+    height: 8px;
+    zoom: 1;
+}
+.gwt-DialogBox .dialogTopLeft {
+    background: url(images/corner.png) no-repeat -13px 0px;
+    -background: url(images/corner_ie6.png) no-repeat -13px 0px;
+}
+.gwt-DialogBox .dialogTopRight {
+    background: url(images/corner.png) no-repeat -18px 0px;
+    -background: url(images/corner_ie6.png) no-repeat -18px 0px;
+}
+.gwt-DialogBox .dialogBottomLeft {
+    background: url(images/corner.png) no-repeat 0px -15px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -15px;
+}
+.gwt-DialogBox .dialogBottomRight {
+    background: url(images/corner.png) no-repeat -5px -15px;
+    -background: url(images/corner_ie6.png) no-repeat -5px -15px;
+}
+* html .gwt-DialogBox .dialogTopLeftInner {
+    width: 5px;
+    overflow: hidden;
+}
+* html .gwt-DialogBox .dialogTopRightInner {
+    width: 8px;
+    overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomRightInner {
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.gwt-DisclosurePanel {
+}
+.gwt-DisclosurePanel-open {
+}
+.gwt-DisclosurePanel-closed {
+}
+.gwt-DisclosurePanel .header,
+.gwt-DisclosurePanel .header a,
+.gwt-DisclosurePanel .header td {
+    padding-left: 10;
+    text-decoration: none;  /* Remove underline from header */
+    color: black;
+    cursor: pointer;
+}
+.gwt-DisclosurePanel .content {
+    padding: 4px 0px 4px 8px;
+    /*border-left: 3px solid #e3e3e3;
+   margin-left: 6px;*/
+}
+
+.gwt-FileUpload {
+}
+
+.gwt-Frame {
+    border-top: 2px solid #666;
+    border-left: 2px solid #666;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+}
+
+.gwt-HorizontalSplitPanel {
+}
+.gwt-HorizontalSplitPanel .hsplitter {
+    cursor: move;
+    border: 0px;
+    background: #91c0ef url(images/vborder.png) repeat-y;
+}
+.gwt-VerticalSplitPanel {
+
+}
+.gwt-VerticalSplitPanel .vsplitter {
+    cursor: move;
+    border: 0px;
+    background: #91c0ef url(images/hborder.png) repeat-x;
+}
+
+.gwt-HTML {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+}
+
+.gwt-Hyperlink {
+}
+
+.gwt-Image {
+}
+
+
+/* ->
+PANEL HEADING
+type: colour/ size
+background
+*/
+
+.gwt-Label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight:normal;
+}
+
+.gwt-ListBox {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+.ac-MenuItem {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    color: green;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.gwt-MenuBar {
+    cursor: pointer;
+    color: green;
+    text-decoration: none;
+    /*cursor: default;
+   font-family: Arial,Helvetica,sans-serif;
+   font-size: 10px;
+   color: black;*/
+}
+.gwt-MenuBar .gwt-MenuItem {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    cursor: default;
+}
+.gwt-MenuBar {
+/* background: #cdcdcd; */
+}
+.gwt-MenuItem-selected {
+    background: #cdcdcd;
+    cursor: pointer;
+}
+.gwt-MenuBar-horizontal {
+    /*background: #ebebeb url(images/hborder.png) repeat-x 0px -2003px;
+ border: 1px solid #BBBBBB;*/
+}
+.gwt-MenuBar-horizontal .gwt-MenuItem {
+    padding: 0px 10px;
+    vertical-align: bottom;
+    /*color: #666666;
+   font-weight: bold;*/
+    cursor: pointer;
+    color: green;
+    text-decoration: none
+}
+.gwt-MenuBar-horizontal .gwt-MenuItemSeparator {
+    width: 1px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+/*border-left: 1px solid #888888;*/
+    background: white;
+}
+.gwt-MenuBar-horizontal .gwt-MenuItemSeparator .menuSeparatorInner {
+    width: 1px;
+    height: 1px;
+    background: white;
+}
+.gwt-MenuBar-vertical {
+    margin-top: 0px;
+    margin-left: 0px;
+    background: white;
+}
+.gwt-MenuBar-vertical table {
+    border-collapse: collapse;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem {
+    padding: 4px 14px 4px 1px;
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator {
+    padding: 2px 0px;
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator .menuSeparatorInner {
+    height: 1px;
+    padding: 0px;
+    border: 0px;
+    /*  border-top: 1px solid #777777;
+   background: #ddddee;*/
+    overflow: hidden;
+}
+.gwt-MenuBar-vertical .subMenuIcon {
+    padding-right: 4px;
+}
+.gwt-MenuBar-vertical .subMenuIcon-selected {
+    background: #cdcdcd;
+}
+.gwt-MenuBarPopup {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    color: black;
+    margin: 0px 0px 0px 3px;
+    z-index: 2147483646
+}
+.gwt-MenuBarPopup .menuPopupTopCenter {
+    background: url(images/hborder.png) 0px -12px repeat-x;
+}
+.gwt-MenuBarPopup .menuPopupBottomCenter {
+    background: url(images/hborder.png) 0px -13px repeat-x;
+    -background: url(images/hborder_ie6.png) 0px -13px repeat-x;
+}
+.gwt-MenuBarPopup .menuPopupMiddleLeft {
+    background: url(images/vborder.png) -12px 0px repeat-y;
+    -background: url(images/vborder_ie6.png) -12px 0px repeat-y;
+}
+.gwt-MenuBarPopup .menuPopupMiddleRight {
+    background: url(images/vborder.png) -13px 0px repeat-y;
+    -background: url(images/vborder_ie6.png) -13px 0px repeat-y;
+}
+.gwt-MenuBarPopup .menuPopupTopLeftInner {
+    width: 5px;
+    height: 5px;
+    zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupTopRightInner {
+    width: 8px;
+    height: 5px;
+    zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupBottomRightInner {
+    width: 8px;
+    height: 8px;
+    zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupTopLeft {
+    background: url(images/corner.png) no-repeat 0px -36px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -36px;
+}
+.gwt-MenuBarPopup .menuPopupTopRight {
+    background: url(images/corner.png) no-repeat -5px -36px;
+    -background: url(images/corner_ie6.png) no-repeat -5px -36px;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeft {
+    background: url(images/corner.png) no-repeat 0px -41px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -41px;
+}
+.gwt-MenuBarPopup .menuPopupBottomRight {
+    background: url(images/corner.png) no-repeat -5px -41px;
+    -background: url(images/corner_ie6.png) no-repeat -5px -41px;
+}
+* html .gwt-MenuBarPopup .menuPopupTopLeftInner {
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+}
+* html .gwt-MenuBarPopup .menuPopupTopRightInner {
+    width: 8px;
+    height: 5px;
+    overflow: hidden;
+}
+* html .gwt-MenuBarPopup .menuPopupBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    overflow: hidden;
+}
+* html .gwt-MenuBarPopup .menuPopupBottomRightInner {
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.gwt-PasswordTextBox {
+    padding: 2px;
+}
+.gwt-PasswordTextBox-readonly {
+    color: #888;
+}
+
+.gwt-PopupPanel {
+    border: 3px solid #e3e3e3;
+    padding: 3px;
+    background: white;
+    z-index: 2147483650;
+}
+
+.ac-PopupPanel {
+    border: 1px solid white;
+    padding: 1px;
+    background: white;
+    z-index: 2147483646;
+}
+
+.gwt-DecoratedPopupPanel .popupContent {
+}
+.gwt-DecoratedPopupPanel .popupMiddleCenter {
+    padding: 3px;
+    background: #e3e3e3;
+}
+.gwt-DecoratedPopupPanel .popupTopCenter {
+    background: url(images/hborder.png) repeat-x;
+}
+.gwt-DecoratedPopupPanel .popupBottomCenter {
+    background: url(images/hborder.png) repeat-x 0px -4px;
+    -background: url(images/hborder_ie6.png) repeat-x 0px -4px;
+}
+.gwt-DecoratedPopupPanel .popupMiddleLeft {
+    background: url(images/vborder.png) repeat-y;
+}
+.gwt-DecoratedPopupPanel .popupMiddleRight {
+    background: url(images/vborder.png) repeat-y -4px 0px;
+    -background: url(images/vborder_ie6.png) repeat-y -4px 0px;
+}
+.gwt-DecoratedPopupPanel .popupTopLeftInner {
+    width: 5px;
+    height: 5px;
+    zoom: 1;
+}
+.gwt-DecoratedPopupPanel .popupTopRightInner {
+    width: 8px;
+    height: 5px;
+    zoom: 1;
+}
+.gwt-DecoratedPopupPanel .popupBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    zoom: 1;
+}
+.gwt-DecoratedPopupPanel .popupBottomRightInner {
+    width: 8px;
+    height: 8px;
+    zoom: 1;
+}
+.gwt-DecoratedPopupPanel .popupTopLeft {
+    background: url(images/corner.png) no-repeat 0px -10px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -10px;
+}
+.gwt-DecoratedPopupPanel .popupTopRight {
+    background: url(images/corner.png) no-repeat -5px -10px;
+    -background: url(images/corner_ie6.png) no-repeat -5px -10px;
+}
+.gwt-DecoratedPopupPanel .popupBottomLeft {
+    background: url(images/corner.png) no-repeat 0px -15px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -15px;
+}
+.gwt-DecoratedPopupPanel .popupBottomRight {
+    background: url(images/corner.png) no-repeat -5px -15px;
+    -background: url(images/corner_ie6.png) no-repeat -5px -15px;
+}
+* html .gwt-DecoratedPopupPanel .popupTopLeftInner {
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+}
+* html .gwt-DecoratedPopupPanel .popupTopRightInner {
+    width: 8px;
+    height: 5px;
+    overflow: hidden;
+}
+* html .gwt-DecoratedPopupPanel .popupBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    overflow: hidden;
+}
+* html .gwt-DecoratedPopupPanel .popupBottomRightInner {
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.gwt-PushButton-up,
+.gwt-PushButton-up-hovering,
+.gwt-PushButton-up-disabled,
+.gwt-PushButton-down,
+.gwt-PushButton-down-hovering,
+.gwt-PushButton-down-disabled {
+    margin: 0;
+    text-decoration: none;
+    background: url("images/hborder.png") repeat-x 0px -27px;
+}
+.gwt-PushButton-up,
+.gwt-PushButton-up-hovering,
+.gwt-PushButton-up-disabled {
+    padding: 3px 5px 3px 5px;
+}
+.gwt-PushButton-up {
+    border: 1px outset #ccc;
+    cursor: pointer;
+}
+.gwt-PushButton-up-hovering {
+    border: 1px outset;
+    border-color: #9cf #69e #69e #7af;
+    cursor: pointer;
+}
+.gwt-PushButton-up-disabled {
+    border: 1px outset #ccc;
+    cursor: default;
+    opacity: .5;
+    filter: alpha(opacity=40);
+    zoom: 1;
+}
+.gwt-PushButton-down,
+.gwt-PushButton-down-hovering,
+.gwt-PushButton-down-disabled {
+    padding: 4px 4px 2px 6px;
+}
+.gwt-PushButton-down {
+    border: 1px inset #666;
+    cursor: pointer;
+}
+.gwt-PushButton-down-hovering {
+    border: 1px inset;
+    border-color: #9cf #69e #69e #7af;
+    cursor: pointer;
+}
+.gwt-PushButton-down-disabled {
+    border: 1px outset #ccc;
+    cursor: default;
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+    zoom: 1;
+}
+
+.gwt-RadioButton {
+}
+.gwt-RadioButton-disabled {
+    color: #888;
+}
+
+.gwt-RichTextArea {
+}
+.hasRichTextToolbar {
+    border: 0px;
+}
+.gwt-RichTextToolbar {
+    background: #ebebeb url(images/hborder.png) repeat-x 0px -2003px;
+    border-bottom: 1px solid #BBBBBB;
+    padding: 3px;
+    margin: 0px;
+}
+.gwt-RichTextToolbar .gwt-PushButton-up {
+    padding: 0px 1px 0px 0px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    border-width: 1px;
+}
+.gwt-RichTextToolbar .gwt-PushButton-up-hovering {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 0px 1px 0px 0px;
+    border-width: 1px;
+}
+.gwt-RichTextToolbar .gwt-PushButton-down {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 0px 0px 0px 1px;
+    border-width: 1px;
+}
+.gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 0px 0px 0px 1px;
+    border-width: 1px;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-up {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 0px 1px 0px 0px;
+    border-width: 1px;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-up-hovering {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 0px 1px 0px 0px;
+    border-width: 1px;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-down {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 0px 0px 0px 1px;
+    border-width: 1px;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-down-hovering {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 0px 0px 0px 1px;
+    border-width: 1px;
+}
+
+.gwt-StackPanel {
+    border-bottom: 1px solid #bbbbbb;
+}
+.gwt-StackPanel .gwt-StackPanelItem {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 3px;
+    border: 1px solid #bbbbbb;
+    border-bottom: 0px;
+    background: #d3def6 url(images/hborder.png) repeat-x 0px -989px;
+}
+.gwt-StackPanel .gwt-StackPanelContent {
+    border: 1px solid #bbbbbb;
+    border-bottom: 0px;
+    background: white;
+    padding: 2px 2px 10px 5px;
+}
+
+.gwt-DecoratedStackPanel {
+    border-bottom: 1px solid #bbbbbb;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelContent {
+    border: 1px solid #bbbbbb;
+    border-bottom: 0px;
+    background: white;
+    padding: 2px 2px 10px 5px;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelItem {
+    cursor: pointer;
+}
+.gwt-DecoratedStackPanel .stackItemTopLeft,
+.gwt-DecoratedStackPanel .stackItemTopRight {
+    height: 6px;
+    width: 6px;
+    zoom: 1;
+}
+.gwt-DecoratedStackPanel .stackItemTopLeft {
+    border-left: 1px solid #bbbbbb;
+    background: #e4e4e4 url(images/corner.png) no-repeat 0px -49px;
+    -background: #e4e4e4 url(images/corner_ie6.png) no-repeat 0px -49px;
+}
+.gwt-DecoratedStackPanel .stackItemTopRight {
+    border-right: 1px solid #bbbbbb;
+    background: #e4e4e4 url(images/corner.png) no-repeat -6px -49px;
+    -background: #e4e4e4 url(images/corner_ie6.png) no-repeat -6px -49px;
+}
+.gwt-DecoratedStackPanel .stackItemTopLeftInner,
+.gwt-DecoratedStackPanel .stackItemTopRightInner {
+    width: 1px;
+    height: 1px;
+}
+* html .gwt-DecoratedStackPanel .stackItemTopLeftInner,
+* html .gwt-DecoratedStackPanel .stackItemTopRightInner {
+    width: 6px;
+    height: 6px;
+    overflow: hidden;
+}
+.gwt-DecoratedStackPanel .stackItemTopCenter {
+    background: url(images/hborder.png) 0px -21px repeat-x;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleLeft {
+    background: #d3def6 url(images/hborder.png) repeat-x 0px -989px;
+    border-left: 1px solid #bbbbbb;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleLeftInner,
+.gwt-DecoratedStackPanel .stackItemMiddleRightInner {
+    width: 1px;
+    height: 1px;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleRight {
+    background: #d3def6 url(images/hborder.png) repeat-x 0px -989px;
+    border-right: 1px solid #bbbbbb;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleCenter {
+    font-weight: bold;
+    font-size: 1.3em;
+    background: #d3def6 url(images/hborder.png) repeat-x 0px -989px;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelItem-first .stackItemTopRight,
+.gwt-DecoratedStackPanel .gwt-StackPanelItem-first .stackItemTopLeft {
+    border: 0px;
+    background-color: white;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelItem-below-selected .stackItemTopLeft,
+.gwt-DecoratedStackPanel .gwt-StackPanelItem-below-selected .stackItemTopRight {
+    background-color: white;
+}
+
+.gwt-SuggestBox {
+    padding: 2px;
+}
+.gwt-SuggestBoxPopup {
+    margin-left: 3px;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .item {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    padding: 2px 6px;
+    color: #424242;
+    cursor: default;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .item-selected {
+    background: #cdcdcd;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupContent {
+    background: white;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupTopCenter {
+    background: url(images/hborder.png) repeat-x;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomCenter {
+    background: url(images/hborder.png) repeat-x 0px -4px;
+    -background: url(images/hborder_ie6.png) repeat-x 0px -4px;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupMiddleLeft {
+    background: url(images/vborder.png) repeat-y;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupMiddleRight {
+    background: url(images/vborder.png) repeat-y -4px 0px;
+    -background: url(images/vborder_ie6.png) repeat-y -4px 0px;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupTopLeftInner {
+    width: 5px;
+    height: 5px;
+    zoom: 1;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupTopRightInner {
+    width: 8px;
+    height: 5px;
+    zoom: 1;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    zoom: 1;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomRightInner {
+    width: 8px;
+    height: 8px;
+    zoom: 1;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupTopLeft {
+    background: url(images/corner.png) no-repeat 0px -23px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -23px;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupTopRight {
+    background: url(images/corner.png) no-repeat -5px -23px;
+    -background: url(images/corner_ie6.png) no-repeat -5px -23px;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomLeft {
+    background: url(images/corner.png) no-repeat 0px -28px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -28px;
+    z-index: 2147483646
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomRight {
+    background: url(images/corner.png) no-repeat -5px -28px;
+    -background: url(images/corner_ie6.png) no-repeat -5px -28px;
+    z-index: 2147483646
+}
+* html .gwt-SuggestBoxPopup .suggestPopupTopLeftInner {
+    width: 5px;
+    height: 5px;
+    overflow: hidden;
+    z-index: 2147483646
+}
+* html .gwt-SuggestBoxPopup .suggestPopupTopRightInner {
+    width: 8px;
+    height: 5px;
+    overflow: hidden;
+    z-index: 2147483646
+}
+* html .gwt-SuggestBoxPopup .suggestPopupBottomLeftInner {
+    width: 5px;
+    height: 8px;
+    overflow: hidden;
+    z-index: 2147483646
+}
+* html .gwt-SuggestBoxPopup .suggestPopupBottomRightInner {
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    z-index: 2147483646
+}
+
+.gwt-TabBar {
+}
+.gwt-TabBar .gwt-TabBarFirst {
+    width: 5px;  /* first tab distance from the left */
+}
+.gwt-TabBar .gwt-TabBarRest {
+}
+.gwt-TabBar .gwt-TabBarItem {
+    margin-left: 6px;
+    padding: 3px 6px 3px 6px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    background: #e3e3e3;
+}
+.gwt-TabBar .gwt-TabBarItem-selected {
+    cursor: default;
+    background: #bcbcbc;
+}
+.gwt-TabBar .gwt-TabBarItem-disabled {
+    cursor: default;
+    color: #999999;
+}
+.gwt-TabPanel {
+}
+.gwt-TabPanelBottom {
+    border-color: #bcbcbc;
+    border-style: solid;
+    border-width: 3px 2px 2px;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.gwt-TextArea {
+    padding: 2px;
+}
+.gwt-TextArea-readonly {
+    color: #888;
+}
+
+.gwt-TextBox {
+    padding: 2px;
+}
+.gwt-TextBox-readonly {
+    color: #888;
+}
+
+.gwt-ToggleButton-up,
+.gwt-ToggleButton-up-hovering,
+.gwt-ToggleButton-up-disabled,
+.gwt-ToggleButton-down,
+.gwt-ToggleButton-down-hovering,
+.gwt-ToggleButton-down-disabled {
+    margin: 0;
+    text-decoration: none;
+    background: url("images/hborder.png") repeat-x 0px -27px;
+}
+.gwt-ToggleButton-up,
+.gwt-ToggleButton-up-hovering,
+.gwt-ToggleButton-up-disabled {
+    padding: 3px 5px 3px 5px;
+}
+.gwt-ToggleButton-up {
+    border: 1px outset #ccc;
+    cursor: pointer;
+}
+.gwt-ToggleButton-up-hovering {
+    border: 1px outset;
+    border-color: #9cf #69e #69e #7af;
+    cursor: pointer;
+}
+.gwt-ToggleButton-up-disabled {
+    border: 1px outset #ccc;
+    cursor: default;
+    opacity: .5;
+    zoom: 1;
+    filter: alpha(opacity=40);
+}
+.gwt-ToggleButton-down,
+.gwt-ToggleButton-down-hovering,
+.gwt-ToggleButton-down-disabled {
+    padding: 4px 4px 2px 6px;
+}
+.gwt-ToggleButton-down {
+    background-position: 0 -513px;
+    border: 1px inset #ccc;
+    cursor: pointer;
+}
+.gwt-ToggleButton-down-hovering {
+    background-position: 0 -513px;
+    border: 1px inset;
+    border-color: #9cf #69e #69e #7af;
+    cursor: pointer;
+}
+.gwt-ToggleButton-down-disabled {
+    background-position: 0 -513px;
+    border: 1px inset #ccc;
+    cursor: default;
+    opacity: .5;
+    zoom: 1;
+    filter: alpha(opacity=40);
+}
+
+.gwt-Tree .gwt-TreeItem {
+    padding: 1px 0px;
+    margin: 0px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.gwt-Tree .gwt-TreeItem-selected {
+    background: #93c2f1 url(images/hborder.png) repeat-x 0px -1463px;
+}
+.gwt-TreeItem .gwt-RadioButton input,
+.gwt-TreeItem .gwt-CheckBox input {
+    margin-left: 0px;
+}
+* html .gwt-TreeItem .gwt-RadioButton input,
+* html .gwt-TreeItem .gwt-CheckBox input {
+    margin-left: -4px;
+}
+
+.gwt-DateBox input {
+    width: 8em;
+}
+.dateBoxFormatError {
+    background: #eed6d6;
+}
+.dateBoxPopup {
+}
+
+.gwt-DatePicker {
+    border: 1px solid #888;
+    cursor: default;
+}
+.gwt-DatePicker td,
+.datePickerMonthSelector td:focus {
+    outline: none
+}
+.datePickerDays {
+    width: 100%;
+    background: white;
+}
+.datePickerDay,
+.datePickerWeekdayLabel,
+.datePickerWeekendLabel {
+    font-size: 75%;
+    text-align: center;
+    padding: 4px;
+    outline: none;
+}
+.datePickerWeekdayLabel,
+.datePickerWeekendLabel {
+    background: #c1c1c1;
+    padding: 0px 4px 2px;
+    cursor: default;
+}
+.datePickerDay {
+    padding: 4px;
+    cursor: pointer;
+}
+.datePickerDayIsToday {
+    border: 1px solid black;
+    padding: 3px;
+}
+.datePickerDayIsWeekend {
+    background: #EEEEEE;
+}
+.datePickerDayIsFiller {
+    color: #888888;
+}
+.datePickerDayIsValue {
+    background: #abf;
+}
+.datePickerDayIsDisabled {
+    color: #AAAAAA;
+    font-style: italic;
+}
+.datePickerDayIsHighlighted {
+    background: #dde;
+}
+.datePickerDayIsValueAndHighlighted {
+    background: #ccf;
+}
+.datePickerMonthSelector {
+    background: #c1c1c1;
+    width: 100%;
+}
+td.datePickerMonth {
+    text-align: center;
+    vertical-align: center;
+    white-space: nowrap;
+    font-size: 70%;
+    font-weight: bold;
+}
+.datePickerPreviousButton,
+.datePickerNextButton {
+    font-size: 120%;
+    line-height: 1em;
+    cursor: pointer;
+    padding: 0px 4px;
+}
+
+.ACSortableGrid-selected td {
+    background-color: #fcfcb8 !important;
+    /*	border-style: solid;
+     border-width: 4px;*/
+    cursor: pointer;
+/*	border: 1px solid #fff;*/
+}
+
+.Header {
+    background: white;
+    text-align: center !important;
+}
+
+.Alt {
+    background: #f2f2f2 !important;
+}
+
+.ACSortableGrid {
+    cursor: pointer;
+}
+
+.ACSortableGrid td {
+    border: 1px solid #c2c2c2;
+    border-width: 0 1px 0 0;
+    padding: 3px 2px 3px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight:normal;
+    color: #000;
+}
+
+/* add to gwt/ html
+tr.columnhead td {
+	background: #cccdff;
+	font-weight:bold;
+	}
+ */
+
+
+/*
+********************************************************
+*/
+
+.gwt-SliderBar-shell {
+    border: 2px solid #faf9f7;
+    border-right: 2px solid #848280;
+    border-bottom: 2px solid #848280;
+    background-color: #efebe7;
+    height: 34pt;
+    width: 50%;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-line {
+    border: 1px solid black;
+    background-color: white;
+    height: 4px;
+    width: 95%;
+    top: 22pt;
+    overflow: hidden;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-knob {
+    top: 14pt;
+    width: 11px;
+    height: 21px;
+    z-index: 1;
+    cursor: pointer;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-tick {
+    top: 12pt;
+    width: 1px;
+    height: 8pt;
+    background: black;
+    overflow: hidden;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-label {
+    top: 2pt;
+    font-size: 8pt;
+    cursor: default;
+}
+.gwt-SliderBar-shell-focused {
+}
+.gwt-SliderBar-shell .gwt-SliderBar-line-sliding {
+    background-color: #DDDDDD;
+    cursor: pointer;
+}
+
+
+/*Pop up CSS */
+
+.pop_up_btn {
+    background:#e1e1e1;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 320px;
+    left:165px;
+    height:20px;
+    width:610px;
+    font-size:11px;
+    font-weight:bold;
+    padding:5px 0 0 0;
+}
+
+.pop_up_btn p {
+    padding:1px 0 0 0;
+    float:left;
+    text-align:right;
+    margin: 0 5px 0 0;
+    width:510px;
+}
+
+#fade { /*--Transparent background layer--*/
+    display: none;
+    background: #000;
+    position: fixed; left: 0; top: 0;
+    width: 100%; height: 100%;
+    opacity: .80;
+    z-index: 99990;
+}
+.popup_block{
+    display: none; /*--hidden by default--*/
+    background: #fff;
+    padding: 2px;
+    border: 1px solid #a1a1a1;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%; left: 50%;
+    z-index: 99999;
+/*--CSS3 Box Shadows--*/
+    -webkit-box-shadow: 0px 0px 20px #000;
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000;
+}
+img.btn_close {
+    float: right;
+    border:none;
+    margin:7px 5px 0 0;
+}
+
+.popup_block p {
+    padding:10px 0 8px 0;
+    margin:0;
+}
+
+a.poplight {
+    float:right;
+    text-indent:-9999px;
+    display:block;
+    color:#fff;
+    background:url(images/analysis_btn.png) no-repeat;
+    width:86px;
+    height:15px;
+    margin-right:5px;
+}
+/*--Making IE6 Understand Fixed Positioning--*/
+*html #fade {
+    position: absolute;
+}
+*html .popup_block {
+    position: absolute;
+}
+
+
+.pop_up_content a:focus {
+    outline:none;
+}
+
+.ui-tabs-hide {
+    display: none;
+}
+
+ul.pop_up_header {
+    height:32px;
+    margin:0px;
+    padding:0;
+    background:url(images/popup_header_bg.png) no-repeat;
+}
+
+.pop_up_header li {
+    display:inline;
+    float:left;
+    margin:5px;
+}
+
+.pop_up_header a.price_range {
+    text-indent:-9999px;
+    display:block;
+    width:0px;
+    height:0px;
+}
+
+.pop_up_header a.price_range:hover, .pop_up_header a.pip_range_hour:hover, .pop_up_header a.pip_range_week:hover  {
+    background-position: 0 -22px;
+}
+
+.pop_up_header a.pip_range_hour  {
+    text-indent:-9999px;
+    display:block;
+    width:0px;
+    height:0px;
+}
+
+.pop_up_header a.pip_range_week  {
+    text-indent:-9999px;
+    display:block;
+    width:0px;
+    height:0px;
+}
+
+.pop_up_header li.price_range a:hover, .pop_up_header li.pip_range_hour a:hover, .pop_up_header li.pip_range_week a:hover  {
+    background-position: 0 -27px;
+}
+
+.price_range li.ui-tabs-selected {
+    background:#000;
+}
+
+.pop_up_content li.ui-tabs-selected a.price_range, .pop_up_content li.ui-tabs-selected a.pip_range_hour, .pop_up_content li.ui-tabs-selected a.pip_range_week {
+    background-position: 0 -22px;
+}
+
+.price_range_content, .pip_range_hour_content, .pip_range_week_content {
+    padding:0 8px;
+    margin:2px 0 0 0;
+}
+
+.price_range_content h3, .pip_range_hour_content h3, .pip_range_week_content h3 {
+    background:#e1e1e1;
+    font-size:12px;
+    font-weight:bold;
+    padding:8px 10px 7px;
+    margin:0px;
+}
+
+.graph {
+    padding:0 10px;
+    background:#f0f0f0;
+}
+
+.graph p {
+    margin:0px;
+    padding:5px 0;
+    font-size:11px;
+    width:530px;
+}
+
+table.prf, table.prh, table.prw {
+    width:496px;
+    font-size:11px;
+    font-weight:normal;
+    background:#fff;
+    border:1px solid #a1a1a1;
+}
+
+table.prf caption, table.prh caption, table.prw caption {
+    padding:4px 0 18px;
+}
+
+table.prf th, table.prh th, table.prw th{
+    text-align:right;
+    border-right:2px solid #f2f4f1;
+    width:48px;
+    padding:10px 10px 0px 0;
+    font-weight:normal;
+}
+
+
+table.prf td, table.prh td, table.prw td {
+    text-align:center;
+    border-right:2px solid #f2f4f3;
+    border-bottom:2px solid #f2f4f3;
+    padding:0 5px;
+    font-weight:normal;
+    font-size:11px;
+    height:15px;
+}
+
+table.prf td.last {
+    text-align:center;
+    background:#daefd0;
+    padding:0;
+    font-weight:normal;
+    font-size:11px;
+    height:15px;
+    border:none;
+}
+
+table.prh td.last {
+    text-align:center;
+    background:#daefd0;
+    padding:0 2px;;
+    font-weight:normal;
+    font-size:11px;
+    height:15px;
+    border:none;
+}
+
+table.prw td.last {
+    text-align:center;
+    background:#daefd0;
+    padding:0 2px;;
+    font-weight:normal;
+    font-size:11px;
+    height:15px;
+    border:none;
+}
+
+.close_it {
+    display:block;
+    cursor:pointer;
+    text-indent:-9999px;
+    margin:0 auto;
+    background:url(images/close_it.png) no-repeat;
+    width:62px;
+    height:15px;
+}
+
+/*** This is the CSS for the widget / START ***/
+
+/* ******************************************************************************************** */
+
+
+.search-body {
+    background:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.search-body td {
+    border: 0 none;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+/*text-align: left;*/
+}
+
+p{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    line-height:14px;
+    color:#000;
+}
+
+input, select{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    line-height:14px;
+    color:#333;
+}
+
+input.search-name{
+    width:232px;
+}
+
+
+.search-heading{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float:left;
+    width:540px;
+    background:url(images/iFrame/main-heading-bg.gif) no-repeat top left;
+    padding:0 0 0 10px;
+    margin:0;
+}
+
+.search-heading-ps{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float:left;
+    width:540px;
+    background:url(images/iFrame/main-heading-bg-ps.png) no-repeat bottom left;
+    padding:0 0 0 0px;
+    margin:0;
+}
+
+
+.search-heading-wide{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float:left;
+    width:780px;
+    background:url(images/iFrame/main-heading-bg-wide.gif) no-repeat top left;
+    padding:0 0 0 0;
+    margin:0;
+}
+
+.search-heading-left{
+    float:left;
+    width:510px;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-heading-right{
+    float:left;
+    width:20px;
+    padding:8px 0 10px 0;
+    margin:0;
+    color:#fff;
+}
+
+.intro-heading{
+    color: #009900;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.intro-search-img{
+    float:left;
+    width:77px;
+    margin:0 3px 0 0;
+    padding:0;
+}
+
+.intro-search-copy{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float:left;
+    width:420px;
+    margin:0;
+    padding:0;
+}
+
+.intro-search-copy-bold{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float:left;
+    width:420px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+}
+
+
+#wrapper{
+    width:552px;
+    height:610px;
+    margin:0 auto;
+    padding:2px 0 10px 2px;
+    border:1px solid #a1a1a1;
+    background:#fff;
+}
+
+#content{
+    float:left;
+    width:550px;
+    height:540px;
+    overflow:auto;
+    margin:0 auto;
+    padding:0;
+    background:#fff;
+}
+
+.basic-search,
+.advanced-seach{
+    width:500px;
+    margin:0 auto;
+    padding:0;
+    background:#fff;
+}
+
+.sub-heading{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float:left;
+    width:500px;
+    background:#e1e1e1;
+    padding:10px 0 10px 10px;
+    margin:0;
+    font-weight:bold;
+    color:#000;
+}
+
+.search-table{
+    background:#f3f3f3;
+    padding:0;
+    margin:0 0 0 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+}
+
+tr {
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+td {
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+.pad-left{
+    padding:0 0 0 10px;
+}
+
+.required{
+    padding:0 0 0 10px;
+}
+
+input.symbol-name{
+    margin:0 10px;
+}
+
+select.group-select{
+    margin:0 0 0 15px;
+}
+.add-button{
+    margin:5px 0 5px 70px;
+}
+
+.add-result{
+    float:left;
+    min-width:305px;
+    margin:5px 0 5px 70px;
+    background:#fff;
+    color:#000;
+    padding:5px;
+}
+
+.add-result-close{
+    float:left;
+    margin:5px 0 0 0;
+    background:#fff;
+    color:#000;
+    padding:6px 5px;
+}
+
+img{border:none;}
+
+.arrow-simple{
+    margin:0 20px 0 5px;
+}
+
+.continuation,
+.reversal{
+    margin:0 90px 0 5px;
+}
+
+.ascending{margin:0 50px 0 5px}
+.descending{margin:0 50px 0 5px}
+.triangle{margin:0 0 0 5px}
+
+.buttons{
+    float:left;
+    list-style:none;
+    padding:0;
+    margin:10px 0 0 0;
+}
+
+.buttons ul{
+    list-style:none;
+    display:inline;
+    padding:0 0 0 170px;
+    margin:15px 0 0 0;
+}
+
+.buttons ul li{
+    list-style:none;
+    display:inline;
+    padding:0;
+    margin:10px 5px 0 0;
+}
+
+/* ******************************************************************************************** */
+
+.gwt-PopupPanelGlass {
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    z-index: 1000000000;
+}
+
+/*
+ * ScrollTable
+ */
+.ac-AlternateRow {
+    background: #f0f0f0;
+}
+
+
+.gwt-ScrollTable {
+    border-top: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+}
+
+.gwt-ScrollTable .headerWrapper {
+/*background: #8bd url(images/bg_header_gradient.gif) repeat-x bottom left;*/
+    background: #f0f0f0;
+}
+
+.gwt-ScrollTable .footerWrapper {
+    border-top: 1px solid #aaa;
+    background: #8bd url(images/bg_header_gradient.gif) repeat-x bottom left;
+}
+
+.gwt-ScrollTable .dataTable td
+{
+    overflow: hidden;
+    padding-left: 1px;
+    border-top: 0px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 0px solid #aaa;
+    border-left: 0px solid #aaa;
+    white-space: normal;
+}
+
+.gwt-ScrollTable .headerTable td,
+.gwt-ScrollTable .footerTable td {
+    /*border-color: #aaa;
+border-style: solid;
+border-width: 0px 1px 1px 0px;*/
+    overflow: hidden;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+
+    padding-left: 1px;
+    border-top: 0px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 0px solid #aaa;
+    border-left: 0px solid #aaa;
+}
+
+.gwt-ScrollTable .headerTable td,
+.gwt-ScrollTable .footerTable td {
+    color: black;
+}
+
+.gwt-ScrollTable .dataTable tr.selected td {
+    background: #FFFFAA;
+}
+
+.gwt-ScrollTable .dataTable tr.alternateRow td {
+    background: #f0f0f0;
+}
+
+.gwt-ScrollTable .dataTable tr.highlighted {
+    background: #FFFFAA;
+}
+
+.gwt-ScrollTable .dataTable tr.highlighted td {
+    background: #FFFFAA;
+}
+
+.gwt-ScrollTable .dataTable td.highlighted {
+    background: #FFFFAA;
+    cursor: pointer;
+}
+
+.ac-ErrorLabel {
+    color: red;
+    font-size: 12px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+
+.ac-ErrorPanel
+{	background:#e1e1e1;
+    color: #000;
+    margin: 0;
+    padding: 0 0 0 0;
+    border: 1px solid #000;
+    font-weight: normal;
+    background-color: #e1e1e1;
+    z-index: 2147483651;
+}
+.ac-MessageHeading
+{
+    color: white;
+    font-size: 11px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    vertical-align: text-bottom;
+    text-decoration: none;
+    background:url(images/iFrame/popup-message-heading-bg.gif) no-repeat top left;
+}
+
+.ac_test {
+    color: magenta;
+    background-color: darkolivegreen;
+}
+.ac-MessageHeadingLabel
+{
+    color: white;
+    font-size: 11px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    vertical-align: text-bottom;
+    text-decoration: none;
+    background:url(images/iFrame/popup-message-heading-label-bg.gif) no-repeat top left;
+}
+ac-MessagePopupGlassPanel
+{
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    z-index: 2147483646;
+    position:absolute;
+}
+.ac-iframe {
+    border: 0px;
+}
+.ac-EducationHeader {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.ac-EducationElement {
+    margin-left: 5px;
+}
+
+
+
+/*
+  =======================================
+             PowerStatsPanel
+  =======================================
+*/
+
+.ps-html { width : 650px; height : 173px; }
+
+.ps-html-popup { width : 494px; height : 173px;  font-family: Arial,Helvetica,sans-serif; font-size: 10px; }
+
+.ps-img-panel { width : 615px; height : 431px; }
+
+.ps-img-panel-popup { width : 500px; height : 350px; }
+
+.ps-link { width : 500px; height : 21px; }
+
+.ps-panel-button { width : 159px; height : 21px; }
+
+.ps-panel { width : 675px; height : 422px; }
+
+.ps-panel-popup { width : 550px; height : 422px; }
+
+.ps-search-body { background:white; font-family: Arial, Helvetica, sans-serif; font-size: 11px; width : 675px; height : 531px; }
+
+.ps-search-body-popup { background:white; font-family: Arial, Helvetica, sans-serif; font-size: 11px; width : 550px; height : 531px; }
+
+.ps-search-heading { font-family: Arial, Helvetica, sans-serif; font-size: 11px; float:left; width:675px; height : 32px; background:url(images/iFrame/main-heading-bg-ps.png) no-repeat bottom left; padding:0 0 0 0px; margin:0; }
+
+.ps-search-heading-popup { font-family: Arial, Helvetica, sans-serif; font-size: 11px; float:left; width:549px; height : 32px; background:url(images/iFrame/main-heading-bg.gif) no-repeat top left; padding:0 0 0 10px; margin:0; }
+
+.ps-tab-button-selected { background-image: url(images/but_tab_selected.png); color: Green; margin: 0pt; border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px; padding: 0px; background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; text-decoration: none; cursor: pointer; width : 159px; height : 21px; }
+
+.ps-tab-button-selected-noback { background-image: url(images/but_tab_grey_selected.png); color: White; margin: 0pt; border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px; padding: 0px; background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; text-decoration: none; cursor: pointer; width : 159px; height : 21px; }
+
+.ps-tab-button { background-image: url(images/but_tab.png); color: white; margin: 0pt; border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px; padding: 0px; background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; text-decoration: none; cursor: pointer; width : 159px; height : 21px; }
+
+.ps-tab-button-noback {	background-image: url(images/but_tab_grey.png); color: green; margin: 0pt; border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px; padding: 0px; background-color: transparent;
+    font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; text-decoration: none; cursor: pointer;  width : 159px; height : 21px; }
+
+
+/*
+  ======================================
+		HeaderPanel
+  ======================================
+*/
+
+.header-logo { width : 232px; height : 48px; }
+
+.header-options-panel { width : 300px; height : 50px; }
+
+.header-userlabel  { border: 0; font-family: Arial, Helvetica, sans-serif; font-size:10px; text-align: right; vertical-align: middle; width : 150px; }
+
+.header-broker-logo { width : 155px; height : 55px; }
+
+.header-logout-div { cursor: pointer; color: green;  text-decoration: underline; width : 70px; }
+
+/*
+  =====================================
+            The Tab bar
+  =====================================
+*/
+
+.gwt-DecoratedTabBar .gwt-TabBarFirst {  width: 5px;  /* first tab distance from the left */ }
+
+.gwt-DecoratedTabBar .gwt-TabBarRest { }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem { border-collapse: collapse; margin-left: 6px; }
+
+.gwt-DecoratedTabBar .tabTopCenter { padding: 0px; background: #e3e3e3; }
+
+.gwt-DecoratedTabBar .tabTopLeft, .gwt-DecoratedTabBar .tabTopRight {   padding: 0px;  zoom: 1; }
+
+.gwt-DecoratedTabBar .tabTopLeftInner, .gwt-DecoratedTabBar .tabTopRightInner { width: 6px; height: 6px; }
+
+.gwt-DecoratedTabBar .tabTopLeft { background: url(images/corner.png) no-repeat 0px -55px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -55px; }
+
+.gwt-DecoratedTabBar .tabTopRight { background: url(images/corner.png) no-repeat -6px -55px;
+    -background: url(images/corner_ie6.png) no-repeat -6px -55px; }
+
+* html .gwt-DecoratedTabBar .tabTopLeftInner, * html .gwt-DecoratedTabBar .tabTopRightInner { width: 6px;
+    height: 6px; overflow: hidden; }
+
+.gwt-DecoratedTabBar .tabMiddleLeft, .gwt-DecoratedTabBar .tabMiddleRight { width: 6px; padding: 0px;
+    background: #e3e3e3 url(images/hborder.png) repeat-x 0px -1463px; }
+
+.gwt-DecoratedTabBar .tabMiddleLeftInner, .gwt-DecoratedTabBar .tabMiddleRightInner { width: 1px; height: 1px; }
+
+.gwt-DecoratedTabBar .tabMiddleCenter { padding: 0px 4px 2px 4px; cursor: pointer; cursor: pointer; color: black;
+    font-weight: bold; text-align: center; background: #e3e3e3 url(images/hborder.png) repeat-x 0px -1463px; }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopCenter { background: #747474; }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopLeft { background-position: 0px -61px; }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopRight { background-position: -6px -61px; }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleLeft, .gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleRight {
+    background: #bcbcbc url(images/hborder.png) repeat-x 0px -2511px; }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleCenter { cursor: default;
+    background: #bcbcbc url(images/hborder.png) repeat-x 0px -2511px; color: white; }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem-disabled .tabMiddleCenter { cursor: default; color: #999999; }
+
+/*.gwt-DecoratedTabBar { margin-left : 590px; } used when all tabs are visible*/
+
+.gwt-DecoratedTabBar { margin-left : 872px; }
+
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected { cursor : default; }
+
+.gwt-TabBarItem { cursor : pointer; }
+
+/* EXPLORE button */
+
+.EXPLORE .tabMiddleCenterInner .gwt-Label { color: #FFFFFF; background-color: #009900; }
+
+.gwt-DecoratedTabBar .EXPLORE .tabTopLeft  { background: url(images/explorecorner.png) no-repeat 0px -55px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -55px; }
+
+.gwt-DecoratedTabBar .EXPLORE .tabMiddleLeft, .gwt-DecoratedTabBar .EXPLORE .tabMiddleRight {
+    background: #009900 url(images/explorehborder.png) repeat-x 0px -2511px; }
+
+.gwt-DecoratedTabBar .EXPLORE .tabTopCenter { background: none repeat scroll 0 0 #009900; }
+
+.gwt-DecoratedTabBar .EXPLORE .tabTopRight { background: url("images/explorecorner.png") no-repeat scroll -6px -55px transparent; }
+
+.gwt-DecoratedTabBar .EXPLORE .tabMiddleCenter {
+    background: url("images/explorehborder.png") repeat-x scroll 0 -2511px #009900; color: white; }
+
+/* ANALYSE button */
+.ANALYSE .tabMiddleCenterInner .gwt-Label { color: #FFFFFF; background-color: #02488B; }
+
+.gwt-DecoratedTabBar .ANALYSE .tabTopLeft  { background: url(images/analysecorner.png) no-repeat 0px -55px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -55px; }
+
+.gwt-DecoratedTabBar .ANALYSE .tabMiddleLeft, .gwt-DecoratedTabBar .ANALYSE .tabMiddleRight {
+    background: #02488B url(images/analysehborder.png) repeat-x 0px -2511px; }
+
+.gwt-DecoratedTabBar .ANALYSE .tabTopCenter { background: none repeat scroll 0 0 #02488B; }
+
+.gwt-DecoratedTabBar .ANALYSE .tabTopRight { background: url("images/analysecorner.png") no-repeat scroll -6px -55px transparent; }
+
+.gwt-DecoratedTabBar .ANALYSE .tabMiddleCenter {
+    background: url("images/analysehborder.png") repeat-x scroll 0 -2511px #02488B; color: white; }
+
+/* POWERSTATS Button */
+.POWERSTATS .tabMiddleCenterInner .gwt-Label { color: #FFFFFF; background-color: #646474; }
+
+.gwt-DecoratedTabBar .POWERSTATS .tabTopLeft  { background: url(images/powerstatscorner.png) no-repeat 0px -55px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -55px; }
+
+.gwt-DecoratedTabBar .POWERSTATS .tabMiddleLeft, .gwt-DecoratedTabBar .POWERSTATS .tabMiddleRight {
+    background: #646474 url(images/powerstatshborder.png) repeat-x 0px -2511px; }
+
+.gwt-DecoratedTabBar .POWERSTATS .tabTopCenter { background: none repeat scroll 0 0 #646474; }
+
+.gwt-DecoratedTabBar .POWERSTATS .tabTopRight { background: url("images/powerstatscorner.png") no-repeat scroll -6px -55px transparent; }
+
+.gwt-DecoratedTabBar .POWERSTATS .tabMiddleCenter {
+    background: url("images/powerstatshborder.png") repeat-x scroll 0 -2511px #646474; color: white; }
+
+/* RESEARCH button */
+
+.RESEARCH .tabMiddleCenterInner .gwt-Label { color: #FFFFFF; background-color: #FF821E; }
+
+.gwt-DecoratedTabBar .RESEARCH .tabTopLeft  { background: url(images/researchcorner.png) no-repeat 0px -55px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -55px; }
+
+.gwt-DecoratedTabBar .RESEARCH .tabMiddleLeft, .gwt-DecoratedTabBar .RESEARCH .tabMiddleRight {
+    background: #FF821E url(images/researchhborder.png) repeat-x 0px -2511px; }
+
+.gwt-DecoratedTabBar .RESEARCH .tabTopCenter { background: none repeat scroll 0 0 #FF821E; }
+
+.gwt-DecoratedTabBar .RESEARCH .tabTopRight { background: url("images/researchcorner.png") no-repeat scroll -6px -55px transparent; }
+
+.gwt-DecoratedTabBar .RESEARCH .tabMiddleCenter {
+    background: url("images/researchhborder.png") repeat-x scroll 0 -2511px #FF821E; color: white; }
+
+/* COMMUNITY button */
+.COMMUNITY .tabMiddleCenterInner .gwt-Label { color: #FFFFFF; background-color: #7F607C; }
+
+.gwt-DecoratedTabBar .COMMUNITY .tabTopLeft  { background: url(images/communitycorner.png) no-repeat 0px -55px;
+    -background: url(images/corner_ie6.png) no-repeat 0px -55px; }
+
+.gwt-DecoratedTabBar .COMMUNITY .tabMiddleLeft, .gwt-DecoratedTabBar .COMMUNITY .tabMiddleRight {
+    background: #7F607C url(images/communityhborder.png) repeat-x 0px -2511px; }
+
+.gwt-DecoratedTabBar .COMMUNITY .tabTopCenter { background: none repeat scroll 0 0 #7F607C; }
+
+.gwt-DecoratedTabBar .COMMUNITY .tabTopRight { background: url("images/communitycorner.png") no-repeat scroll -6px -55px transparent; }
+
+.gwt-DecoratedTabBar .COMMUNITY .tabMiddleCenter {
+    background: url("images/communityhborder.png") repeat-x scroll 0 -2511px #7F607C; color: white; }
+
+/*
+  ===========================================
+            Explore Panel
+  ===========================================
+*/
+
+.inner-menu-panel {
+    width : 525px;
+}
+
+
+/*
+  ===========================================
+            Powerstats Panel
+  ===========================================
+*/
+
+.powerstats-menu-Panel {
+    background: url(images/powerstatsgradient.png) repeat-y center top;
+    padding: 9px 10px 8px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border:0;
+    margin: 0 0 5px 0;
+    width : 1070px;
+    height : 32px;
+}
+
+.powerstats-button-selected {
+    background-image: url(images/but_tab_selected.png); color: #646474; margin: 0pt; border-top: 0px; border-bottom: 0px;
+    border-left: 0px; border-right: 0px; padding: 0px; background-color: transparent; font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px; font-weight: bold; text-decoration: none; cursor: pointer; width : 159px; height : 21px; }
+
+
+/* working panel styles */
+
+.x-panel {
+    overflow: visible;
+}
+
+.x-panel .x-panel-content {
+    width: 200px;
+    height: 40px;
+    overflow: visible;
+}
+
+.x-panel .x-panel-header {
+    zoom: 1;
+    color: #15428b;
+    font: bold 11px tahoma, arial, verdana, sans-serif;
+    padding: 5px 3px 4px 5px;
+    border: 1px solid #99bbe8;
+    line-height: 15px;
+/*background: transparent url(images/white-top-bottom.gif) repeat-x 0 -1px;*/
+    width: 180px;
+    overflow: visible;
+}
+
+.x-panel .working {
+    height: 32px;
+    width: 32px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.x-panel-progress-bar {
+    width: 100%;
+    height: 1000%;
+    text-align: left;
+    padding: 0px;
+}
+
+.glass-panel {
+    z-index: 999999;
+}
+
+
+/*
+  ==========================================
+            ChartPatternViewImpl
+  ==========================================
+*/
+
+.chartview-main-panel { width : 960px;
+/*height : 710px; */
+    border: 0; font-family: Arial, Helvetica, sans-serif; font-size:10px; text-align: left; }
+
+.chartview-main-panel td {
+/*background: #FFF;  this conflicts with Smart GWT ListGrid  */
+   font-family: Arial, Helvetica, sans-serif; font-size:10px; text-align: left; }
+
+.chartview-pattern-image { width : 500px; height : 275px; }
+
+/*
+ ===========================================
+           PowerstatsView
+ ===========================================
+*/
+
+.powerstatsview-main-panel { width : 960px; height : 710px; border: 0; font-family: Arial, Helvetica, sans-serif; font-size:10px; text-align: left; }
+
+/*
+ ===========================================
+            TutorialPanel
+ ===========================================
+*/
+
+.tutorial-panel { width : 165px; }
+
+.tutorial-iframe { border : 0px; width : 150px; height : 170px; }
+
+.tutorial-edu-header { font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-weight: bold; color: #000000;
+    text-align: left; margin-left: 5px; width : 165px;}
+
+.tutorial-edu-element { margin-left: 5px; width : 165px}
+
+/*
+ ===========================================
+            StackSearchPanel
+ ===========================================
+*/
+
+.stack-scroll-panel { width : 185px; height : 250px; }
+
+.stack-flex-panel { width : 165px; }
+
+
+
+/*
+  =========================================
+         StandardApplicationViewImpl
+  =========================================
+*/
+
+
+
+.std-button-selected { background-image: url(images/but_tab_selected.png); color: Green; margin: 0pt; border-top: 0px; border-bottom: 0px;
+    border-left: 0px; border-right: 0px; padding: 0px; background-color: transparent; font-family: Arial,Helvetica,sans-serif; font-size: 12px;
+    font-weight: bold; text-decoration: none; cursor: pointer; width : 159px; height : 21px; }
+
+.std-button { background-image: url(images/but_tab.png); color: white; margin: 0pt; border-top: 0px; border-bottom: 0px; border-left: 0px;
+    border-right: 0px; padding: 0px; background-color: transparent; font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold;
+    text-decoration: none; cursor: pointer; width : 159px; height : 21px; }
+
+.std-button:hover {
+    background-image: url(images/but_tab_selected.png);
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: Green;
+}
+
+/*
+  ==========================================
+        PatternHelpDialogBox
+  ==========================================
+*/
+.pattern-help-dialog-box {
+    width : 400px; height : 250px;
+    border: 3px solid #e3e3e3;
+    padding: 3px;
+    background: white;
+    z-index: 2147483650;
+}
+
+
+/*
+  =========================================
+            ClickThroughPanels
+  =========================================
+*/
+
+.ct-pattern-image  { width : 250px; }
+
+.ct-pattern-image-failed { width : 480px; }
+
+.ct-vertical-spacer { height : 20px; }
+
+.ct-loading-image { width : 500px; height :275px; }
+
+.ct-search-body { background:white; font-family: Arial, Helvetica, sans-serif; font-size: 11px; width : 800px; height : 450px; }
+
+.ct-search-body td { border: 0 none; font-family: Arial,Helvetica,sans-serif; font-size: 10px; }
+
+.ct-search-header-panel { font-family: Arial, Helvetica, sans-serif; font-size: 11px; float:left;
+    background:url(images/iFrame/main-heading-bg-wide.gif) no-repeat top left; padding : 0; margin:0; width : 799px; height : 32px;}
+
+.ct-button { width : 100px;}
+
+
+/*
+  ======================================
+            DataScrollGrid
+  ======================================
+*/
+
+.datascroll-header-table { width : 535px; height : 30px; }
+
+/*
+  ======================================
+          XPatternSearchPanel
+  ======================================
+*/
+.xpattern-search-table {
+    background:#f3f3f3;
+    padding:0; margin:0 0 0 10px;
+    font-family:Arial, Helvetica, sans-serif; font-size:11px;
+    width : 480px; height : 98px; }
+
+.xpattern-bottombutton-panel { width : 400px; height : 59px; }
+
+/*
+  =======================================
+         HRSPatternSearchPanel
+  =======================================
+*/
+.hrspattern-quality-table { width : 450px; }
+
+.hrsadvanced-search-panel { witdh : 480px; }
+
+.hrsadvanced-instruction-panel { width : 480px; height : 108px }
+
+.hrsadvanced-instruct-inner-panel { width : 420px; height : 76px }
+
+.hrsintro-search-copy { font-family: Arial, Helvetica, sans-serif; font-size: 11px; float:left;  width:420px; margin:0; padding:0; height : 53px; }
+
+.hrsintro-search-copy-bold { font-family: Arial, Helvetica, sans-serif; font-size: 11px; float:left; width:420px; margin: 0px; padding: 0px; font-weight: bold; }
+
+
+/*
+ ========================================
+            Global Styles
+ ========================================
+*/
+
+.image-spacer { height : 10px; }
+
+.alert-sound-image { cursor: pointer; width : 17px; height : 17px; }
+
+.pattern-image-pointer { width : 480px; height : 275px; cursor : pointer; }
+
+.pattern-image-normal { width : 480px; height : 275px;}
+
+.std-app-spacer { width : 1px; }
+
+.bulb-image { width : 20px; height : 17px; }
+
+.bulb-image-top { width : 20px; height : 17px; padding-left : 10px;}
+
+.disclaimer { width: 960px; }
+
+.wide-app-spacer {width : 15px; }
+
+.green-font { font-family: Arial, Helvetica, sans-serif; font-size:14px;  font-weight: bold; text-align: left; color: green;}
+
+
+.image-panel-underlay { border-bottom : 1px solid #000000; border-right : 1px solid #000000;
+    border-top : 1px solid #000000; border-left : 1px solid #000000;vertical-align: middle;
+
+}
+.check-Box-Panel{
+    border-color:green;
+    border: 1px solid #000000;
+    background-color: #f0f0f0;
+}
+
+
+/*
+  ========================================
+            TimeZoneMenu
+  ========================================
+*/
+.timezonemenu-panel { width : 300px; height : 30px;}
+
+.timezonemenu-label { font-family: Arial,Helvetica,sans-serif; font-size: 10px;  color: black;  }
+
+/*
+ =========================================
+            LanguageMenuMenu
+ =========================================
+ GH:WIDHT reduced to suite the panel
+*/
+.languagemenu-panel { width : 150px; height : 30px; }
+
+.languagemenu-menuitem { font-family: Arial,Helvetica,sans-serif; font-size: 10px; color: green; cursor: pointer; text-decoration: underline; }
+
+.languagemenu-currlang-img { width : 16px; height : 11px }
+
+
+/*
+ =========================================
+        NotificationPanel
+ =========================================
+*/
+/*
+ =========================================
+        NotificationPanel
+ =========================================
+*/
+
+.notif-panel { width : 500px; height : 400px; border : 1px solid;}
+
+.notif-header-panel { width : 100%; height : 30px; background : url(images/gradient.png) repeat-y center top;}
+
+.notif-header-title { vertical-align:middle; font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; color: #ffffff; padding-left: 10px; }
+
+.notif-content-panel { width : 498px;}
+
+.notif-close-img { cursor : pointer; position:relative; left : 30px}
+
+.notif-lbl { cursor : pointer; font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #009900;}
+
+.notif-ack-lbl { font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #000000; text-align:right; }
+
+.notif-msg-panel { font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: #000000; width : 100%;
+    background-color: #A3B7E8; border-bottom:1px solid}
+
+.notif-msg-panel-alt { font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: #000000; width : 100%; background-color: #f0f8ff;
+    border-bottom:1px solid; text-decoration:line-through;}
+
+.notif-msg-lbl-read { width: 95%; text-decoration:line-through;}
+
+.notif-ack-popup { background-color: #f5f5dc; font-family: Arial,Helvetica,sans-serif; font-size: 10px; color: #000000;}
+
+.notif-chkbox { float: right;}
+
+/*EDITABLE GRID STYLE SHEETS*/
+.advanced-GridPanel {
+
+
+}
+.advanced-Grid{
+
+    overflow: auto;
+    padding-left: 1px;
+    border-top: 0px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    white-space: normal;
+    width :720px;
+
+}
+
+
+.advanced-Grid th{
+/*width:150px;*/
+    padding: 0;
+    text-align: center;
+    background: #f0f0f0; /* legend headings */
+    font-weight: bold;
+    border-left: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    white-space: normal;
+    vertical-align:bottom;
+
+}
+
+.advanced-Grid .data-cell {
+    cursor: pointer;
+    color: black;
+    font-size: 10px;
+    font-weight: normal;
+    overflow: auto;
+}
+/** grid column styles */
+.advanced-Grid .grid-column {
+    border:1px solid #aaa;
+
+}
+.editableGrid-OddRow {
+
+    background-color: #ffffff;
+}
+
+.editableGrid-EvenRow {
+    background: #f0f0f0;
+}
+.editableGrid-label{
+    font-size:11px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    background: #f0f0f0;
+}
+
+/** grid selected row styles */
+.advanced-Grid .selected-row {
+    background: #ffffaa;
+
+}
+.headerHorizontalPanel{
+    font-size:15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e3e1e1;
+}
+.advanced-FocusPanel {
+/*height: 200px;*/
+/*width:910px;*/
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.advanced-Grid tr:hover, .advanced-Grid .subgrid-row .advanced-FocusPanel tr:hover {
+    background: #FFFFAA;
+}
+
+/** header cells nested panel styles */
+.advanced-Grid .header-cell {
+
+    text-align: center;
+    vertical-align: middle;
+    padding: 3px 0px;
+    border: 0;
+
+}
+
+
+/** header cells nested panel table styles */
+.advanced-Grid .header-cell table {
+    font-family: sans-serif;
+    color: #222222;
+    display: inline;
+    border: 0;
+}
+
+/** header cells nested panel table styles */
+.advanced-Grid .header-cell td {
+    text-align: center;
+    cursor: pointer;
+    background: #f0f0f0;
+/*height: 100%;*/
+}
+
+
+.advanced-Grid .header-cell td .gwt-Label{
+    font-size: 12px;
+}
+
+.advanced-verticalPanel{
+
+    border: 1px solid #e1e1e1;
+}
+
+
+
+.ac-search-menu-panel {
+    background: url(images/gradient.png) repeat-y center top;
+    padding: 9px 10px 8px 10px;
+    font-weight: bold;
+    color : white;
+    border:0;
+    margin: 0 0 5px 0;
+    text-align: left;
+    width : 186px;
+    height : 35px;
+}
+
+.ac-search-menu-header {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 8px;
+}
+
+
+/**
+    These styles apply to com.autochartist.web.aclite.client.ui.grids.CustomDataGrid
+**/
+.custom-grid {
+    border: 1px solid #000000;
+}
+
+.custom-grid-message {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000000;
+    text-align: center;
+}
+
+.custom-grid-header {
+    width : 720px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000000;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+}
+
+.custom-grid-lbl {
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.custom-grid-nolbl {
+    color: #f0f0f0;
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.custom-grid-lbl-asc {
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    cursor: pointer;
+    cursor: hand;
+    background: url("/icons/scrollTableAscending.gif") no-repeat scroll right center transparent;
+}
+
+.custom-grid-lbl-desc {
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    cursor: pointer;
+    cursor: hand;
+    background: url("/icons/scrollTableDescending.gif") no-repeat right center transparent;
+}
+
+.custom-grid-lbl-asc-ac {
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    cursor: pointer;
+    cursor: hand;
+    background: url("/aclite/icons/scrollTableAscending.gif") no-repeat scroll right center transparent;
+}
+
+.custom-grid-lbl-desc-ac {  
+    text-align: center;
+    border-left: 1px solid #cccccc;
+    cursor: pointer;
+    cursor: hand;
+    background: url("/aclite/icons/scrollTableDescending.gif") no-repeat right center transparent;
+}
+
+/**
+ end of custom styles for com.autochartist.web.aclite.client.ui.grids.CustomDataGrid
+**/
