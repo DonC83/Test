@@ -16,7 +16,7 @@ public class Patterns {
 
     private String direction;
 
-    private String interval;
+    private Integer interval;
 
     private String pattern;
 
@@ -24,7 +24,7 @@ public class Patterns {
 
     private String length;
 
-    private String quality;
+    private Integer quality;
 
     private String type;
 
@@ -64,11 +64,11 @@ public class Patterns {
         this.direction = direction;
     }
 
-    public String getInterval() {
+    public int getInterval() {
         return interval;
     }
 
-    public void setInterval(String interval) {
+    public void setInterval(Integer interval) {
         this.interval = interval;
     }
 
@@ -96,11 +96,11 @@ public class Patterns {
         this.length = length;
     }
 
-    public String getQuality() {
+    public Integer getQuality() {
         return quality;
     }
 
-    public void setQuality(String quality) {
+    public void setQuality(Integer quality) {
         this.quality = quality;
     }
 

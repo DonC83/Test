@@ -12,6 +12,7 @@ import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy;
 import com.google.gwt.user.cellview.client.TextColumn;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -45,17 +46,17 @@ public class ScollPanelEx implements EntryPoint {
 //        RootPanel.get("main1").add(sp);
 
 
-        Grid2Headers g2h = new Grid2Headers();
-
-        CellTable<Patterns> content2 = g2h.createCellTable(createData());
-        ScrollPanel sp2 = new ScrollPanel(content2);
-        sp2.setSize("735px", "200px");
-        RootPanel.get("main2").add(sp2);
+//        Grid2Headers g2h = new Grid2Headers();
+//
+//        CellTable<Patterns> content2 = g2h.createCellTable(createData());
+//        ScrollPanel sp2 = new ScrollPanel(content2);
+//        sp2.setSize("735px", "200px");
+//        RootPanel.get("main2").add(sp2);
 
 
 
         GridTest gt = new GridTest();
-        CellTable<Patterns> contentTable = gt.createCellTable(createData());
+        CellTable<Patterns> contentTable = gt.createCellTable();
 //        CellTable<Patterns> contentTable = null;
         ScrollPanel sp3 = new ScrollPanel();
 
@@ -81,6 +82,24 @@ public class ScollPanelEx implements EntryPoint {
         vPanel.setStyleName("custom-grid");
 
         RootPanel.get("main4").add(vPanel);
+
+
+        gt.clearTable();
+
+
+
+
+
+        gt.setData(createData());
+
+        gt.clearTable();
+
+        gt.setData(new ArrayList<Patterns>());
+
+//        gt.setData(new ArrayList<Patterns>());
+
+
+
 
 
 //        RootPanel.get("main3").add(genHeaders());
@@ -134,14 +153,16 @@ public class ScollPanelEx implements EntryPoint {
             "Carsales.com Limited FPO"};
     String [] patterns = new String[]{"Inverse Head and Shoulders","Ascending Triangle", "Flag", "Falling Wedge",
             "Rising Wedge", "Triangle", "Channel Down", "Channel Up", "Pennant"};
-    String [] intervals = new String[]{"15min","30min","60min","120min","240min","1440min"};
+    Integer [] intervals = new Integer[]{15, 30, 60, 120, 240, 1440};
     String [] type = new String[]{"Completed", "Emerging", "Approaching"};
 
     String [] directions = new String[]{"/images/Down.PNG", "/images/downBlank.PNG", "/images/DownEast.PNG",
             "/images/Up.PNG", "/images/upBlank.PNG", "/images/UpEast.PNG"};
 
-    String [] qualities = new String[]{"/images/Blue1.PNG", "/images/Blue2.PNG", "/images/Blue3.PNG", "/images/Blue4.PNG", "/images/Blue5.PNG",
-            "/images/Blue6.PNG", "/images/Blue7.PNG", "/images/Blue8.PNG", "/images/Blue9.PNG", "/images/Blue10.PNG"};
+//    String [] qualities = new String[]{"/images/Blue1.PNG", "/images/Blue2.PNG", "/images/Blue3.PNG", "/images/Blue4.PNG", "/images/Blue5.PNG",
+//            "/images/Blue6.PNG", "/images/Blue7.PNG", "/images/Blue8.PNG", "/images/Blue9.PNG", "/images/Blue10.PNG"};
+
+    Integer [] qualities = new Integer[] {1,2,3,4,5,6,7,8,9,10};
 
     private List<Patterns> createData() {
         List<Patterns> patternsList = new ArrayList<Patterns>();

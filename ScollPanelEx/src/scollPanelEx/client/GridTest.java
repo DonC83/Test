@@ -1,17 +1,22 @@
 package scollPanelEx.client;
 
+import com.google.gwt.cell.client.AbstractCell;
+import com.google.gwt.cell.client.Cell;
 import com.google.gwt.cell.client.ImageCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.cellview.client.*;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -35,6 +40,10 @@ public class GridTest {
 
     private TextColumn<Patterns> typeCol;
 
+    private ListDataProvider<Patterns> dataProvider;
+
+    private SingleSelectionModel<Patterns> selectionModel;
+
     interface TableResources extends CellTable.Resources {
 
         @Source({CellTable.Style.DEFAULT_CSS, "tablestyles.css"})
@@ -42,9 +51,14 @@ public class GridTest {
     }
 
 
-    public CustomCellTable<Patterns> createCellTable(List<Patterns> data) {
+    public CustomCellTable<Patterns> createCellTable() {
         CellTable.Resources resources = GWT.create(TableResources.class);
-        table = new CustomCellTable<Patterns>(data.size(), resources);
+
+        table = new CustomCellTable<Patterns>(0, resources);
+
+        dataProvider = new ListDataProvider<Patterns>();
+        selectionModel = new SingleSelectionModel<Patterns>();
+
 
         TextColumn<Patterns> alertColumn = new TextColumn<Patterns>() {
             @Override
@@ -86,7 +100,7 @@ public class GridTest {
         intervalColumn = new TextColumn<Patterns>() {
             @Override
             public String getValue(Patterns object) {
-                return object.getInterval();
+                return object.getInterval() + "min";
             }
         };
         table.addColumn(intervalColumn);
@@ -122,7 +136,7 @@ public class GridTest {
         qualityCol = new Column<Patterns, String>(new ImageCell()) {
             @Override
             public String getValue(Patterns object) {
-                return object.getQuality();
+                return "/images/Blue" + object.getQuality() + ".PNG";
             }
         };
         table.addColumn(qualityCol);
@@ -138,12 +152,13 @@ public class GridTest {
 
         table.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.DISABLED);
 
-        final SingleSelectionModel<Patterns> selectionModel = new SingleSelectionModel<Patterns>();
+
         table.setSelectionModel(selectionModel);
         selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler(){
 
             public void onSelectionChange(SelectionChangeEvent event) {
-                System.out.println(selectionModel.getSelectedObject().toString());
+                //TODO selection handler
+//                selectionModel.getSelectedObject()
             }
         });
 
@@ -160,15 +175,102 @@ public class GridTest {
         table.setColumnWidth(qualityCol, 65, Style.Unit.PX);
         table.setColumnWidth(typeCol, 73, Style.Unit.PX);
 
+        table.setEmptyTableWidget(new Label("no patterns found"));
+        table.setLoadingIndicator(new Label("Loading Data"));
+
+        dataProvider.addDataDisplay(table);
 
 
-        ListDataProvider<Patterns> dataProvider = new ListDataProvider<Patterns>();
-        dataProvider.setList(data);
-        if (data.size()>0) {
+//        dataProvider = new ListDataProvider<Patterns>();
+//
+//
+//        if (data!=null && data.size()>0) {
 //            table.setRowData(data);
-            dataProvider.addDataDisplay(table);
+//            dataProvider.setList(data);
+//            dataProvider.addDataDisplay(table);
+//        }
+        
+
+//        List patternsList = dataProvider.getList();
+//
+//        columnSortHandler = new ColumnSortEvent.ListHandler<Patterns>(patternsList);
+//        columnSortHandler.setComparator(symbolColumn,
+//                new Comparator<Patterns>() {
+//                    public int compare(Patterns o1, Patterns o2) {
+//                        if (o1 == o2) {
+//                            return 0;
+//                        }
+//                        if (o1 != null) {
+//                            return (o2 != null) ? o1.getSymbol().compareTo(o2.getSymbol()) : 1;
+//                        }
+//                        return -1;
+//                    }
+//                });
+//
+//        columnSortHandler.setComparator(intervalColumn,
+//                new Comparator<Patterns>() {
+//                    public int compare(Patterns o1, Patterns o2) {
+//                        if (o1 == o2) {
+//                            return 0;
+//                        }
+//                        if (o1 != null) {
+//                            Integer a = new Integer(o1.getInterval());
+//                            return (o2 != null) ? a.compareTo(o2.getInterval()) : 1;
+//                        }
+//                        return -1;
+//                    }
+//                });
+//
+//
+//        columnSortHandler.setComparator(identifiedColumn,
+//                new Comparator<Patterns>() {
+//                    public int compare(Patterns o1, Patterns o2) {
+//                        if (o1 == o2) {
+//                            return 0;
+//                        }
+//                        if (o1 != null) {
+//                            return (o2 != null) ? o1.getIdentified().compareTo(o2.getIdentified()) : 1;
+//                        }
+//                        return -1;
+//                    }
+//                });
+//
+//
+//        columnSortHandler.setComparator(typeCol,
+//                new Comparator<Patterns>() {
+//                    public int compare(Patterns o1, Patterns o2) {
+//                        if (o1 == o2) {
+//                            return 0;
+//                        }
+//                        if (o1 != null) {
+//                            return (o2 != null) ? o1.getType().compareTo(o2.getType()) : 1;
+//                        }
+//                        return -1;
+//                    }
+//                });
+
+
+
+//        table.addColumnSortHandler(columnSortHandler);
+//        table.getColumnSortList().push(symbolColumn);
+
+//        if (data!=null) {
+//            setData(data);
+//            selectionModel.setSelected(data.get(0), true);
+//        }
+        
+        return table;
+    }
+
+
+    public void setData(List<Patterns> data) {
+
+        if (data!=null && data.size()>0) {
+            dataProvider.setList(data);
+            table.setRowData(data);
         } else {
-            return null;
+            table.setEmptyTableWidget(new Label("No Patterns Found"));
+            return;
         }
 
         List patternsList = dataProvider.getList();
@@ -194,7 +296,8 @@ public class GridTest {
                             return 0;
                         }
                         if (o1 != null) {
-                            return (o2 != null) ? o1.getInterval().compareTo(o2.getInterval()) : 1;
+                            Integer a = new Integer(o1.getInterval());
+                            return (o2 != null) ? a.compareTo(o2.getInterval()) : 1;
                         }
                         return -1;
                     }
@@ -228,14 +331,11 @@ public class GridTest {
                     }
                 });
 
-
-
         table.addColumnSortHandler(columnSortHandler);
         table.getColumnSortList().push(symbolColumn);
-
         selectionModel.setSelected(data.get(0), true);
-        return table;
     }
+
 
     public CellTable<Patterns> createHeaderTable() {
         CellTable.Resources resources = GWT.create(TableResources.class);
@@ -282,7 +382,7 @@ public class GridTest {
         TextColumn<Patterns> intervalColumn = new TextColumn<Patterns>() {
             @Override
             public String getValue(Patterns object) {
-                return object.getInterval();
+                return object.getInterval() + "min";
             }
         };
         table.addColumn(intervalColumn, "Interval");
@@ -316,7 +416,7 @@ public class GridTest {
         TextColumn<Patterns> qualityCol = new TextColumn<Patterns>() {
             @Override
             public String getValue(Patterns object) {
-                return object.getQuality();
+                return "/images/Blue" + object.getQuality() + "PNG";
             }
         };
         table.addColumn(qualityCol, "Quality");
@@ -374,8 +474,18 @@ public class GridTest {
             } else {
                 colLabel.setStyleName("custom-grid-lbl-desc");
             }
+            selectionModel.setSelected(dataProvider.getList().get(0), true);
         }
     }
+
+
+    public void clearTable() {
+        table.setEmptyTableWidget(new Label("Loading Data"));
+        table.setRowData(new ArrayList<Patterns>());
+    }
+
+
+
 
     private Label heading1;
     private Label heading2;
@@ -458,3 +568,4 @@ public class GridTest {
     }
 
 }
+

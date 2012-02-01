@@ -69,7 +69,7 @@ public class Grid2Headers {
         TextColumn<Patterns> intervalColumn = new TextColumn<Patterns>() {
             @Override
             public String getValue(Patterns object) {
-                return object.getInterval();
+                return object.getInterval() + "min";
             }
         };
         table.addColumn(intervalColumn, "Interval");
@@ -105,7 +105,7 @@ public class Grid2Headers {
         Column<Patterns, String> qualityCol = new Column<Patterns, String>(new ImageCell()) {
             @Override
             public String getValue(Patterns object) {
-                return object.getQuality();
+                return "/images/Blue" + object.getQuality() + ".PNG";
             }
         };
         table.addColumn(qualityCol, "Quality");

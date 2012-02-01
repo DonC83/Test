@@ -10,19 +10,16 @@ body, td, a, div, .p {
     font-family: arial, sans-serif
 }
 
-
 /*.gald-wold {*/
-    /*border: none;*/
+/*border: none;*/
 /*}*/
 
 /*.gald-wojd {*/
-    /*border: none;*/
+/*border: none;*/
 /*}*/
 
 .custom-grid {
-    border-bottom: 1px solid #cccccc;
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
+    border: 1px solid #000000;
 }
 
 .custom-grid-message {
@@ -34,7 +31,7 @@ body, td, a, div, .p {
 }
 
 .custom-grid-header {
-    width : 735px;
+    width: 735px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: normal;
@@ -51,6 +48,8 @@ body, td, a, div, .p {
     border-left: 1px solid #cccccc;
     cursor: pointer;
     cursor: hand;
+    height: 20px;
+    line-height: 20px;
 }
 
 .custom-grid-nolbl {
@@ -59,6 +58,8 @@ body, td, a, div, .p {
     border-left: 1px solid #cccccc;
     cursor: pointer;
     cursor: hand;
+    height: 20px;
+    line-height: 20px;
 }
 
 .custom-grid-lbl-asc {
@@ -68,6 +69,8 @@ body, td, a, div, .p {
     cursor: hand;
     background: url("/images/scrollTableAscending.gif") no-repeat scroll right center transparent;
     /*padding-right: 7px;*/
+    height: 20px;
+    line-height: 20px;
 }
 
 .custom-grid-lbl-desc {
@@ -76,5 +79,7 @@ body, td, a, div, .p {
     cursor: pointer;
     cursor: hand;
     background: url("/images/scrollTableDescending.gif") no-repeat right center transparent;
+    height: 20px;
+    line-height: 20px;
     /*padding-right: 7px;*/
 }
