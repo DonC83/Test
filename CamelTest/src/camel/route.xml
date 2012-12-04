@@ -1,0 +1,4 @@
+<route>
+    <from uri="file:/Users/donovan/test/folder1"/>
+    <to uri="file:/Users/donovan/test/folder2" />
+</route>

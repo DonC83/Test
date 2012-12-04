@@ -1,0 +1,25 @@
+<project name="testproject" basedir="." default="all">
+
+    <property file="build.properties"/>
+
+    <path id="path.svnant">
+        <pathelement location="${svn.ant.home}/lib/svnant.jar"/>
+        <pathelement location="${svn.ant.home}/lib/svnClientAdapter.jar"/>
+    </path>
+
+    <typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="path.svnant" />
+
+    <target name="init" description="initalise build folders">
+        <delete dir="${release.dir}" />
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${release.dir" />
+        <mkdir dir="${classes}" />
+    </target>
+
+    <target name="pull_source" depends="init" description="Retrieve source from repo">
+        
+    </target>
+
+    <target name="all" />
+
+</project>

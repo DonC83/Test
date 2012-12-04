@@ -1,0 +1,6 @@
+{
+    "context" : "cronobiz",
+    "eventType" : "registration",
+    "frequency" : "once",
+    "jobType" : "quartz.MailJob"
+}

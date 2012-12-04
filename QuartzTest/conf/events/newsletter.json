@@ -1,0 +1,7 @@
+{
+    "context" : "cronobiz",
+    "eventType" : "newsletter",
+    "frequency" : "monthly",
+    "timeAsGmt" : "10:00",
+    "jobType" : "quartz.MailJob"
+}

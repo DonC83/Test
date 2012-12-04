@@ -1,0 +1,10 @@
+{
+    "context" : "cronobiz",
+    "eventType" : "dailyreminder",
+    "frequency" : "daily",
+    "timeAsGmt" : "07:00",
+    "jobType" : "quartz.QuartzJob",
+    "calendars" : [
+        "weeklyCalendar"
+    ]
+}
