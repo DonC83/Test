@@ -90,11 +90,11 @@ public class ScollPanelEx implements EntryPoint {
 
 
 
-        gt.setData(createData());
+//        gt.setData(createData());
 
-        gt.clearTable();
+//        gt.clearTable();
 
-        gt.setData(new ArrayList<Patterns>());
+//        gt.setData(new ArrayList<Patterns>());
 
 //        gt.setData(new ArrayList<Patterns>());
 

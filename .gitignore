@@ -1,3 +1,7 @@
 GWTComponent/out/
 ScrollPanelEx/out/
 out/
+*.DS_Store
+*.pdf
+tomcat/
+test/
